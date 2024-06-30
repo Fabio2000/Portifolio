@@ -8,7 +8,7 @@ import {
   NavItem,
   NavLink,
 } from 'reactstrap';
-import { House } from '@phosphor-icons/react';
+import { HouseLine } from '@phosphor-icons/react';
 import './navBar.css';
 
 const NavBar = (args) => {
@@ -37,7 +37,7 @@ const NavBar = (args) => {
                   className={`nav-item-link ${activeItem === '/' ? 'active' : ''}`} 
                   onClick={() => handleItemClick('/')}
                 >
-                  {!isOpen && <House size={25} />}
+                  {!isOpen && <HouseLine weight="duotone" size={25} />}
                 </NavLink>
               </NavItem>
               <NavItem>
