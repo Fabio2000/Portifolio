@@ -20,8 +20,9 @@ export const GlobalStyle = createGlobalStyle`
     background-color: ${(props) => props.theme.body};
     color: ${(props) => props.theme.text};
     transition: all 0.50s linear;
-    padding-top: 2rem;
-    
+    padding-top: 3rem;
+    float: right;
+    padding-right: 1rem;
   }
 `;
 
@@ -32,10 +33,9 @@ export const ToggleContainer = styled.div`
   border: 2px solid ${({ theme }) => theme.toggleBorder};
   border-radius: 30px;
   cursor: pointer;
-  width: 4rem;
-  height: 2rem;
+  width: 5rem;
+  height: 2.5rem;
   position: relative;
-  padding-top: 0.2rem;
 `;
 
 export const ToggleButton = styled.div`
@@ -48,6 +48,5 @@ export const ToggleButton = styled.div`
   width: 1.6rem;
   transition: all 0.3s linear;
   position: absolute;
-  top: 0.1rem;
   left: ${({ theme }) => (theme.body === '#FFF' ? '0.1rem' : 'calc(100% - 1.7rem)')};
-`;
+  `;

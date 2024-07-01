@@ -1,10 +1,10 @@
-// App.js
+// Toggle.js
 import React, { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { Sun, Moon } from '@phosphor-icons/react';
 import { GlobalStyle, lightTheme, darkTheme, ToggleContainer, ToggleButton } from './theme';
 
-function App() {
+function Toggle() {
   const [theme, setTheme] = useState('light');
 
   const toggleTheme = () => {
@@ -14,10 +14,10 @@ function App() {
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
       <GlobalStyle />
-      <div className="App">
+      <div className="Toggle">
         <ToggleContainer onClick={toggleTheme}>
           <ToggleButton>
-            {theme === 'light' ? <Sun size={16} weight="fill" /> : <Moon size={16} weight="fill" />}
+            {theme === 'light' ? <Sun color='gold' size={22} weight="fill" /> : <Moon size={18} weight="fill" />}
           </ToggleButton>
         </ToggleContainer>
       </div>
@@ -25,4 +25,4 @@ function App() {
   );
 }
 
-export default App;
+export default Toggle;
