@@ -28,7 +28,7 @@ const NavBar = (args) => {
       <Navbar color="dark" dark expand="md" {...args} className="fixed-top">
         <div className="container">
           <NavbarBrand className='home' href="/">Home</NavbarBrand>
-          <NavbarToggler onClick={toggle} />
+          <NavbarToggler isOpen={isOpen} className='NavbarToggler' onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="me-auto" navbar>
               <NavItem>

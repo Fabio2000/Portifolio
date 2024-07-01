@@ -12,6 +12,7 @@ nav {
   align-items: center;
   padding-bottom: 8px;
   transition: all 0.3s ease;
+  
 }
 
 .nav-item-bar {
@@ -23,7 +24,6 @@ nav {
   background-color: #ff000085;
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 0.3s ease-in-out;
   opacity: 0;
 }
 
@@ -36,4 +36,13 @@ nav {
 .nav-item-link.active .nav-item-bar {
   transform: scaleX(1);
   opacity: 1;
+}
+
+.me-auto{
+  float: right !important;
+  clear: left;
+}
+.NavbarToggler{
+  float: right !important;
+  
 }
