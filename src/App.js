@@ -1,20 +1,30 @@
 import './App.css';
 import Home from './components/home/home';
 import NavBar from './components/navBar/navBar';
-import Toggle from './components/toggle/toggle';
+import Resumo from './components/resumo/resumo';
 
 function App() {
   return (
     <section>
       <NavBar />
-      <body>
-        <section>
-          <Toggle />
-        </section>
-      <section>
+      <div>
         <Home />
-      </section>
-      </body>
+      </div>
+      <div>
+        <Resumo />
+      </div>
+      <div>
+        <Resumo />
+      </div>
+      <div>
+        <Resumo />
+      </div>
+      <div>
+        <Resumo />
+      </div>
+      <div>
+        <Resumo />
+      </div>
     </section>
   )
 }
