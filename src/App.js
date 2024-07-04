@@ -13,18 +13,6 @@ function App() {
       <div>
         <Resumo />
       </div>
-      <div>
-        <Resumo />
-      </div>
-      <div>
-        <Resumo />
-      </div>
-      <div>
-        <Resumo />
-      </div>
-      <div>
-        <Resumo />
-      </div>
     </section>
   )
 }
