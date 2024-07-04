@@ -5,7 +5,7 @@ import ReactTypingEffect from 'react-typing-effect';
 
 function Home() {
 
-    const title = '< Hellow World />'
+    const title = '< Hello World />'
 
     return (
         <section class="wrapper">
