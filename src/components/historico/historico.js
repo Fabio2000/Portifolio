@@ -33,7 +33,7 @@ function Historico() {
                             </h2>
                             <div id="panelsStayOpen-collapseOne" className="accordion-collapse collapse">
                                 <div className="accordion-body">
-                                    <h5>TM Informática</h5>
+                                    <h5>TM Tecnologia</h5>
                                     <p>Análista suporte técnico de sistema em informação de laboratórial e sistema informatizado de gestão hospitalar com as tecnologias Node.js, Pascal(Delphi), OracleSQL, MongoDB, Redis, analise de API REST e RESTFULL usando SOAP UI e Postaman para teste das API`s</p>
                                 </div>
                             </div>

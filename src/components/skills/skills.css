@@ -3,5 +3,18 @@
     padding-top: 3rem;
     color: #203246;
     padding-bottom: 2rem;
-    
+}
+
+#cardHTML svg{
+    padding-top: 0.5rem;
+}
+
+#cardHTML{
+    padding-bottom: 5rem
+
+}
+
+#cardIcon{
+    display: -webkit-inline-box;
+
 }
