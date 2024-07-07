@@ -1,4 +1,4 @@
-.geral{
+.geral {
     font-family: Arial, Helvetica, sans-serif;
     letter-spacing: 0.1rem;
     padding-top: 5rem;
@@ -7,17 +7,25 @@
     color: #fff;
 }
 
-.geral h1{
+.geral h1 {
     text-align: center;
 }
 
-.resumo{
-    padding: 2rem;
-    padding-left: 5rem;
-    padding-right: 5rem;
+.resumo {
+    padding-top: 2rem;
+    padding-left: 20rem;
+    padding-right: 20rem;
+    padding-bottom: 5rem;
 }
 
-.resumo h5{
+@media (max-width: 980px) {
+    .resumo {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+.resumo h5 {
     padding-bottom: 0.5rem;
 }
 
