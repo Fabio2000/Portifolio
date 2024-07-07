@@ -18,3 +18,19 @@
     display: -webkit-inline-box;
 
 }
+
+#skills{
+    overflow: hidden;
+}
+
+#cardCSS svg{
+    padding-top: 1rem;
+}
+
+#cardNode svg{
+    padding-left: 0.5rem;
+}
+
+#cardNext svg{
+    padding-top: 1rem;
+}
