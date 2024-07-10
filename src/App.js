@@ -9,18 +9,18 @@ function App() {
   return (
     <section>
       <NavBar />
-      <div>
+      <div id='home'>
         <Home />
       </div>
-      <div>
+      <div id='resumo'>
         <Resumo />
       </div>
-      <div className="container text-center">
-        <div className="row">
-          <div className="col-12 col-md-6 mb-4">
+      <div className='container'>
+        <div className='row'>
+          <div className='col-sm-12 col-md-6' id='Histrico'>
             <Historico />
           </div>
-          <div className="col-12 col-md-6">
+          <div className='col-sm-12 col-md-6' id='Skills'>
             <Skills />
           </div>
         </div>
