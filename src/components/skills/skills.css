@@ -1,36 +1,15 @@
-#Habilidades h1{
+#SkillsContainer h1{
     font-size: 3rem;
     padding-top: 3rem;
     color: #203246;
     padding-bottom: 2rem;
 }
 
-#cardHTML svg{
-    padding-top: 0.5rem;
+#SkillsContainer svg{
+    padding-right: 0.5rem;
 }
 
-#cardHTML{
-    padding-bottom: 5rem
-
-}
-
-#cardIcon{
-    display: -webkit-inline-box;
-
-}
-
-#skills{
-    overflow: hidden;
-}
-
-#cardCSS svg{
-    padding-top: 1rem;
-}
-
-#cardNode svg{
-    padding-left: 0.5rem;
-}
-
-#cardNext svg{
-    padding-top: 1rem;
+#SkillsCards .card-body {
+    display: flex;
+    align-items: center;
 }
