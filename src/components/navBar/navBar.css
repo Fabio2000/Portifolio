@@ -2,6 +2,22 @@
   float: left;
 }
 
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  background-color: transparent;
+}
+
+.navbar.scrolled {
+  background-color: #ff0000; 
+  box-shadow: 0 4px 5px rgba(255, 0, 0, 0.5);
+}
+
+
 nav {
   font-size: large;
 }
@@ -52,6 +68,9 @@ nav {
 @media (max-width: 768px) {
   .icons {
     justify-content: flex-start;
+  }
+  .navbar{
+    z-index: 1;
   }
 }
 

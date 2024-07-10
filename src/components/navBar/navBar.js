@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Collapse,
   Navbar,
@@ -9,23 +9,46 @@ import {
   NavLink,
 } from 'reactstrap';
 import { HouseLine } from '@phosphor-icons/react';
-
+import { FaRegPaperPlane } from "react-icons/fa";
 import './navBar.css';
 
-const NavBar = (args) => {
+const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeItem, setActiveItem] = useState('/');
-
+  const [scrolled, setScrolled] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
 
   const handleItemClick = (path) => {
     setActiveItem(path);
     setIsOpen(false);
+    
+    const element = document.getElementById(path.substring(1));
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = window.scrollY;
+      if (offset > 20) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
 
   return (
     <header>
-      <Navbar color="dark" dark expand="md" {...args} className="fixed-top">
+      <Navbar color="dark" dark expand="md" className={`navbar ${scrolled ? 'scrolled' : ''}`}>
         <div className="container">
           <NavbarBrand className='home' href="/">Home</NavbarBrand>
           <NavbarToggler className='toggle' onClick={toggle} />
@@ -33,7 +56,7 @@ const NavBar = (args) => {
             <Nav className="me-auto" navbar>
               <NavItem>
                 <NavLink
-                  href="/"
+                  to="/"
                   className={`nav-item-link ${activeItem === '/' ? 'active' : ''}`}
                   onClick={() => handleItemClick('/')}
                 >
@@ -42,7 +65,7 @@ const NavBar = (args) => {
               </NavItem>
               <NavItem>
                 <NavLink
-                  href="/resumo"
+                  to="/resumo"
                   className={`nav-item-link ${activeItem === '/resumo' ? 'active' : ''}`}
                   onClick={() => handleItemClick('/resumo')}
                 >
@@ -52,9 +75,9 @@ const NavBar = (args) => {
               </NavItem>
               <NavItem>
                 <NavLink
-                  href="/historico"
-                  className={`nav-item-link ${activeItem === '/historico' ? 'active' : ''}`}
-                  onClick={() => handleItemClick('/historico')}
+                  to="/Histrico"
+                  className={`nav-item-link ${activeItem === '/Histrico' ? 'active' : ''}`}
+                  onClick={() => handleItemClick('/Histrico')}
                 >
                   Histórico
                   <span className="nav-item-bar"></span>
@@ -62,9 +85,9 @@ const NavBar = (args) => {
               </NavItem>
               <NavItem>
                 <NavLink
-                  href="/skills"
-                  className={`nav-item-link ${activeItem === '/skills' ? 'active' : ''}`}
-                  onClick={() => handleItemClick('/skills')}
+                  to="/Skills"
+                  className={`nav-item-link ${activeItem === '/Skills' ? 'active' : ''}`}
+                  onClick={() => handleItemClick('/Skills')}
                 >
                   Skills
                   <span className="nav-item-bar"></span>
@@ -72,7 +95,7 @@ const NavBar = (args) => {
               </NavItem>
               <NavItem>
                 <NavLink
-                  href="/formacao"
+                  to="/formacao"
                   className={`nav-item-link ${activeItem === '/formacao' ? 'active' : ''}`}
                   onClick={() => handleItemClick('/formacao')}
                 >
@@ -82,7 +105,7 @@ const NavBar = (args) => {
               </NavItem>
               <NavItem>
                 <NavLink
-                  href="/projetos"
+                  to="/projetos"
                   className={`nav-item-link ${activeItem === '/projetos' ? 'active' : ''}`}
                   onClick={() => handleItemClick('/projetos')}
                 >
@@ -92,6 +115,13 @@ const NavBar = (args) => {
               </NavItem>
             </Nav>
             <Nav className="ms-auto icons">
+              <NavItem>
+                <NavLink>
+                  <a href='https://drive.google.com/file/d/1TywNmCOI1wcMMNhLGTnwbMkSUOPaCJdf/view?usp=sharing' target='_blank' rel="noopener noreferrer">
+                    <FaRegPaperPlane size={25} />
+                  </a>
+                </NavLink>
+              </NavItem>
               <NavItem>
                 <NavLink>
                   <a href='https://www.linkedin.com/in/fabio-rodrigues-da-silva-308a53185/' target='_blank' rel="noopener noreferrer">
