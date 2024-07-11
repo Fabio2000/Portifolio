@@ -1,0 +1,32 @@
+#containerCarrossel {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+}
+
+#containerCarrossel h1 {
+    font-size: 3.5rem;
+    text-align: center;
+}
+
+.cert-title {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-top: 2.5rem;
+}
+
+.cert-image {
+    cursor: pointer;
+    max-height: 40rem;
+    object-fit: contain;
+    padding-top: 2.5rem;
+}
+
+.expanded-image {
+    width: 100%;
+}
+
+.modal-content {
+    background-color: transparent;
+    border: none;
+
+}
