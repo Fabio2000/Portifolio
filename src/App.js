@@ -1,4 +1,5 @@
 import './App.css';
+import Carrossel from './components/carrossel/carrossel';
 import Historico from './components/historico/historico';
 import Home from './components/home/home';
 import NavBar from './components/navBar/navBar';
@@ -24,6 +25,9 @@ function App() {
             <Skills />
           </div>
         </div>
+      </div>
+      <div className='col-lg-12' id='Carrossel'>
+        <Carrossel />
       </div>
     </section>
   );
