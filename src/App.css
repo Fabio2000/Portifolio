@@ -21,6 +21,10 @@
     background: #555; /* Cor do polegar ao passar o mouse */
 }
 
-#Carrossel{
+/* #Carrossel{
     background-color: cadetblue;
+} */
+
+#Histrico{
+    z-index: 1;
 }
