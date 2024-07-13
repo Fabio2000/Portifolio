@@ -20,11 +20,3 @@
 ::-webkit-scrollbar-thumb:hover {
     background: #555; /* Cor do polegar ao passar o mouse */
 }
-
-/* #Carrossel{
-    background-color: cadetblue;
-} */
-
-#Histrico{
-    z-index: 1;
-}
