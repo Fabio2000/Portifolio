@@ -50,16 +50,15 @@ const NavBar = () => {
     <header>
       <Navbar color="dark" dark expand="md" className={`navbar ${scrolled ? 'scrolled' : ''}`}>
         <div className="container">
-          <NavbarBrand className='home' href="/">Home</NavbarBrand>
           <NavbarToggler className='toggle' onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="me-auto" navbar>
               <NavItem>
                 <NavLink
-                  to="/"
-                  className={`nav-item-link ${activeItem === '/' ? 'active' : ''}`}
-                  onClick={() => handleItemClick('/')}
-                >
+                  to="/home"
+                  className={`nav-item-link ${activeItem === '/home' ? 'active' : ''}`}
+                  onClick={() => handleItemClick('/home')}
+                  >
                   {!isOpen && <HouseLine weight="duotone" size={25} />}
                 </NavLink>
               </NavItem>
