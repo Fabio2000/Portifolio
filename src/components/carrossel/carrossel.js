@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Carousel, Modal } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './carrossel.css'
 import cert1 from '../../certificados/Linux.jpg';
@@ -18,59 +17,35 @@ const items = [
     { src: cert4, alt: 'Certificado 4' },
     { src: cert5, alt: 'Certificado 5' },
     { src: cert6, alt: 'Certificado 6' },
-];
+]
 
 function Carrossel() {
-
-    const [index, setIndex] = useState(0);
-    const [paused, setPaused] = useState(false);
-    const [modalShow, setModalShow] = useState(false);
-    const [modalImage, setModalImage] = useState('');
-
-    const handleSelect = (selectedIndex, e) => {
-        setIndex(selectedIndex);
-    };
-
-    const handleMouseEnter = () => {
-        setPaused(true);
-    };
-
-    const handleMouseLeave = () => {
-        setPaused(false);
-    };
-
-    const handleImageClick = (src) => {
-        setModalImage(src);
-        setModalShow(true);
-    };
-
     return (
         <div className="" id="containerCarrossel">
             <article>
                 <h1>Certificações</h1>
             </article>
-            <section className="col-12" id="carrossel">
-                <Carousel activeIndex={index} onSelect={handleSelect} interval={paused ? null : 3000}>
-                    {items.map((item, idx) => (
-                        <Carousel.Item
-                            key={idx}
-                            onMouseEnter={handleMouseEnter}
-                            onMouseLeave={handleMouseLeave}
-                        >
-                            <img
-                                className="d-block w-100 cert-image"
-                                src={item.src}
-                                alt={item.alt}
-                                onClick={() => handleImageClick(item.src)}
-                            />
-                        </Carousel.Item>
-                    ))}
-                </Carousel>
-                <Modal show={modalShow} onHide={() => setModalShow(false)} centered>
-                    <Modal.Body>
-                        <img src={modalImage} alt="Expanded" className="expanded-image" />
-                    </Modal.Body>
-                </Modal>
+            <section className="col-12 slider" id="carrossel">
+                <div className='slide-track'>
+                    <div className='slide'>
+                    <img src={cert1} class="img-fluid" alt="..."/>
+                    </div>
+                    <div className='slide'>
+                    <img src={cert2} class="img-fluid" alt="..."/>
+                    </div>
+                    <div className='slide'>
+                    <img src={cert3} class="img-fluid" alt="..."/>
+                    </div>
+                    <div className='slide'>
+                    <img src={cert4} class="img-fluid" alt="..."/>
+                    </div>
+                    <div className='slide'>
+                    <img src={cert5} class="img-fluid" alt="..."/>
+                    </div>
+                    <div className='slide'>
+                    <img src={cert6} class="img-fluid" alt="..."/>
+                    </div>
+                </div>
             </section >
         </div >
     )
