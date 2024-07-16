@@ -6,21 +6,11 @@
 #containerCarrossel h1 {
     font-size: 3.5rem;
     text-align: center;
-}
-
-.cert-title {
-    text-align: center;
-    margin-bottom: 20px;
-    padding-top: 2.5rem;
+    padding-bottom: 4rem;
 }
 
 .slider {
-    height: 750px;
-    margin: auto;
     position: relative;
-    width: 90%;
-    display: grid;
-    place-items: center;
     overflow: hidden;
 }
 
@@ -30,13 +20,14 @@
     animation: scroll 40s linear infinite;
 }
 
+.slide-track.paused {
+    animation-play-state: paused;
+}
+
 .slide {
-    height: 200px;
-    width: 250px;
     display: flex;
     align-items: center;
-    padding: 15px;
-    perspective: 100px;
+    padding: 1.2rem;
 }
 
 img {
@@ -44,24 +35,8 @@ img {
     transition: transform 1s;
 }
 
-.slider::before,
-.slider::after {
-    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
-    content: '';
-    height: 100%;
-    position: absolute;
-    width: 15%;
-    z-index: 2;
-}
-
-.slider::before {
-    left: 0;
-    top: 0;
-}
-
-.slider::after {
-    right: 0;
-    top: 0;
+.slide:hover img {
+    transform: scale(1.1);
 }
 
 @keyframes scroll {
