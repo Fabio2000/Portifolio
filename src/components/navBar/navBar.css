@@ -1,14 +1,13 @@
 .navbar {
   position: fixed;
   width: 100%;
-  z-index: 1;
+  z-index: 1000;
 }
 
 .navbar.scrolled {
   background-color: #ff0000; 
   box-shadow: 0 4px 5px rgba(255, 0, 0, 0.5);
 }
-
 
 nav {
   font-size: large;
