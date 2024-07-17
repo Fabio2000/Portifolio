@@ -31,12 +31,6 @@ function Skills() {
                                 <FaHtml5 size={75} />
                                 <div className="card-title">
                                     <h5>HTML 5</h5>
-                                    <Progress
-                                        style={{ width: '10rem' }}
-                                        animated
-                                        className="my-3"
-                                        value={80}
-                                    />
                                 </div>
                             </div>
                         </div>
@@ -47,12 +41,6 @@ function Skills() {
                                 <FaCss3 size={75} />
                                 <div className="card-title">
                                     <h5>CSS</h5>
-                                    <Progress
-                                        style={{ width: '10rem' }}
-                                        animated
-                                        className="my-3"
-                                        value={50}
-                                    />
                                 </div>
                             </div>
                         </div>
@@ -63,12 +51,6 @@ function Skills() {
                                 <RiJavascriptFill size={75} />
                                 <div className="card-title">
                                     <h5>JavaScript</h5>
-                                    <Progress
-                                        style={{ width: '10rem' }}
-                                        animated
-                                        className="my-3"
-                                        value={50}
-                                    />
                                 </div>
                             </div>
                         </div>
@@ -79,12 +61,6 @@ function Skills() {
                                 <IoLogoPython size={75} />
                                 <div className="card-title">
                                     <h5>Python</h5>
-                                    <Progress
-                                        style={{ width: '10rem' }}
-                                        animated
-                                        className="my-3"
-                                        value={50}
-                                    />
                                 </div>
                             </div>
                         </div>
@@ -95,12 +71,6 @@ function Skills() {
                                 <FaReact size={75} />
                                 <div className="card-title">
                                     <h5>React.js</h5>
-                                    <Progress
-                                        style={{ width: '10rem' }}
-                                        animated
-                                        className="my-3"
-                                        value={65}
-                                    />
                                 </div>
                             </div>
                         </div>
@@ -111,12 +81,6 @@ function Skills() {
                                 <FaNode size={75} />
                                 <div className="card-title">
                                     <h5>Node.js</h5>
-                                    <Progress
-                                        style={{ width: '10rem' }}
-                                        animated
-                                        className="my-3"
-                                        value={40}
-                                    />
                                 </div>
                             </div>
                         </div>
@@ -127,12 +91,6 @@ function Skills() {
                                 <SiNextdotjs size={75} />
                                 <div className="card-title">
                                     <h5>Next.js</h5>
-                                    <Progress
-                                        style={{ width: '10rem' }}
-                                        animated
-                                        className="my-3"
-                                        value={60}
-                                    />
                                 </div>
                             </div>
                         </div>
@@ -143,12 +101,6 @@ function Skills() {
                                 <SiBootstrap size={75} />
                                 <div className="card-title">
                                     <h5>Bootstrap</h5>
-                                    <Progress
-                                        style={{ width: '10rem' }}
-                                        animated
-                                        className="my-3"
-                                        value={85}
-                                    />
                                 </div>
                             </div>
                         </div>
@@ -159,12 +111,6 @@ function Skills() {
                                 <SiMongodb size={75} />
                                 <div className="card-title">
                                     <h5>MongoDB</h5>
-                                    <Progress
-                                        style={{ width: '10rem' }}
-                                        animated
-                                        className="my-3"
-                                        value={50}
-                                    />
                                 </div>
                             </div>
                         </div>
@@ -175,12 +121,6 @@ function Skills() {
                                 <SiMysql size={75} />
                                 <div className="card-title">
                                     <h5>SQL</h5>
-                                    <Progress
-                                        style={{ width: '10rem' }}
-                                        animated
-                                        className="my-3"
-                                        value={65}
-                                    />
                                 </div>
                             </div>
                         </div>
