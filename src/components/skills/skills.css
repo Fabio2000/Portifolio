@@ -4,12 +4,3 @@
     color: #203246;
     padding-bottom: 2rem;
 }
-
-#SkillsContainer svg{
-    padding-right: 0.5rem;
-}
-
-#SkillsCards .card-body {
-    display: flex;
-    align-items: center;
-}
