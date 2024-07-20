@@ -4,3 +4,24 @@
     color: #203246;
     padding-bottom: 2rem;
 }
+
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  button {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    color: white;
+    text-transform: uppercase;
+  }
+  
+  button img {
+    margin-right: 10px;
+  }
