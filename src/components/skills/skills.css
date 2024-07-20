@@ -5,23 +5,15 @@
     padding-bottom: 2rem;
 }
 
+#SkillsContainer{
+    padding-left: 5rem;
+}
 
-.skills-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  button {
-    display: flex;
-    align-items: center;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 16px;
-    color: white;
-    text-transform: uppercase;
-  }
-  
-  button img {
-    margin-right: 10px;
-  }
+#SkillsButtons Button{
+    height: 4rem;
+    width: 12rem;
+}
+
+#SkillsButtons strong{
+    font-size: 1.4rem;
+}
