@@ -12,7 +12,7 @@ export default function Project() {
             </section>
             <div className="container text-center">
                 <div className="row justify-content-around" id="cardsContainer">
-                    <div className="col-sm-12 col-lg-6 card-container">
+                    <div className="col-sm-12 col-lg-5 card-container">
                         <div className="card">
                             <div className="card-front">
                                 <img src={tiringaStore} className="img-fluid" alt="E-commerce TiringaStore" />
@@ -28,7 +28,7 @@ export default function Project() {
                             </div>
                         </div>
                     </div>
-                    <div className="col-sm-12 col-lg-6 card-container">
+                    <div className="col-sm-12 col-lg-5 card-container">
                         <div className="card">
                             <div className="card-front">
                                 <img src={tiringaStore} className="img-fluid" alt="..." />
