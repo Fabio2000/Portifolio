@@ -22,10 +22,10 @@ function App() {
   return (
     <section>
       <NavBar />
-      <div id='home' data-aos="fade-up">
+      <div id='home'>
         <Home />
       </div>
-      <div id='resumo' data-aos="fade-up">
+      <div id='resumo'>
         <Resumo />
       </div>
       <div className='container'>
