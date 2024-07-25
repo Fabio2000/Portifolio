@@ -3,7 +3,6 @@ import {
   Collapse,
   Navbar,
   NavbarToggler,
-  NavbarBrand,
   Nav,
   NavItem,
   NavLink,
@@ -94,9 +93,9 @@ const NavBar = () => {
               </NavItem>
               <NavItem>
                 <NavLink
-                  to="/formacao"
-                  className={`nav-item-link ${activeItem === '/formacao' ? 'active' : ''}`}
-                  onClick={() => handleItemClick('/formacao')}
+                  to="/Carrossel"
+                  className={`nav-item-link ${activeItem === '/Carrossel' ? 'active' : ''}`}
+                  onClick={() => handleItemClick('/Carrossel')}
                 >
                   Formação
                   <span className="nav-item-bar"></span>
@@ -104,9 +103,9 @@ const NavBar = () => {
               </NavItem>
               <NavItem>
                 <NavLink
-                  to="/projetos"
-                  className={`nav-item-link ${activeItem === '/projetos' ? 'active' : ''}`}
-                  onClick={() => handleItemClick('/projetos')}
+                  to="/Projects"
+                  className={`nav-item-link ${activeItem === '/Projects' ? 'active' : ''}`}
+                  onClick={() => handleItemClick('/Projects')}
                 >
                   Projetos
                   <span className="nav-item-bar"></span>
