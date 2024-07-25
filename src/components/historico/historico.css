@@ -3,4 +3,16 @@
     padding-top: 3rem;
     color: #203246;
     padding-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 980px) {
+    #HistoricoContainer h1 svg {
+        width: 3.3rem;
+    }
+    #HistoricoContainer h1 {
+        align-items: center;
+        display: flex;
+        place-content: center;
+    }
 }
