@@ -8,8 +8,8 @@ import { UserList } from "@phosphor-icons/react";
 import { Button } from 'reactstrap';
 
 const skills = [
-  { name: 'HTML 5', icon: <FaHtml5 size={45} color="white" />, color: '#e34c26' },
-  { name: 'CSS 3', icon: <FaCss3 size={45} color="white" />, color: '#264de4' },
+  { name: 'HTML', icon: <FaHtml5 size={45} color="white" />, color: '#e34c26' },
+  { name: 'CSS', icon: <FaCss3 size={45} color="white" />, color: '#264de4' },
   { name: 'JavaScript', icon: <RiJavascriptFill size={45} color="white" />, color: '#f0db4f' },
   { name: 'Python', icon: <IoLogoPython size={45} color="white" />, color: '#3776ab' },
   { name: 'MySQL', icon: <SiMysql size={45} color="white" />, color: '#4479a1' },
