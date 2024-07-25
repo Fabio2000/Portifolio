@@ -5,6 +5,7 @@ import Home from './components/home/home';
 import NavBar from './components/navBar/navBar';
 import Resumo from './components/resumo/resumo';
 import Skills from './components/skills/skills';
+import Project from './components/projetos/project';
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
       </div>
       <div className='col-lg-12' id='Carrossel'>
         <Carrossel />
+      </div>
+      <div id='projects'>
+        <Project />
       </div>
     </section>
   );
