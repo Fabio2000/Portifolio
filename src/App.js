@@ -9,6 +9,7 @@ import Project from './components/projetos/project';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
+import Footer from './components/footer/footer';
 
 function App() {
   useEffect(() => {
@@ -44,6 +45,10 @@ function App() {
       <div id='Projects' data-aos="fade-up">
         <Project />
       </div>
+      <div id='footer'>
+        <Footer />
+      </div>
+      
     </section>
   );
 }
