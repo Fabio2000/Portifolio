@@ -22,8 +22,8 @@ export default function Project() {
                                 <h5>Projeto da faculdade</h5>
                                 <p>Projeto desenvolvido com as tecnologias Next.js, <br/>Bootstrap, MongoDB, Node.js</p>
                                 <div class="d-grid gap-2 col-6 mx-auto">
-                                    <button class="btn btn-outline-primary" type="button">Deploy</button>
-                                    <button class="btn btn-outline-secondary" type="button">Código</button>
+                                    <button class="btn btn-outline-primary" type="button"><a target='_blank' href="https://tiringastore.vercel.app/">Deploy</a></button>
+                                    <button class="btn btn-outline-secondary" type="button"><a target='_blank' href="https://github.com/Fabio2000/tiringa-store">Código</a></button>
                                 </div>
                             </div>
                         </div>
