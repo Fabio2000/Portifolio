@@ -48,7 +48,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^6.3.0",
-    "homepage": "https://Fabio2000.github.io/Portifolio/index"
+    "gh-pages": "^6.3.0"
   }
 }
