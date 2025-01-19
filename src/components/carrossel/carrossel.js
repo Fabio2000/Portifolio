@@ -8,6 +8,8 @@ import cert3 from '../../certificados/OracleSQL.jpg';
 import cert4 from '../../certificados/photoshop.jpg';
 import cert5 from '../../certificados/python.jpg';
 import cert6 from '../../certificados/ReactNative.jpg';
+import cert7 from '../../certificados/certificado_etec.jpeg'
+// import cert8 from '../../certificados/ensinoSuperior.png'
 
 function Carrossel() {
     const [isPaused, setIsPaused] = useState(false);
@@ -27,7 +29,7 @@ function Carrossel() {
     return (
         <div className="" id="containerCarrossel">
             <article>
-                <h1><PiCertificateDuotone size={70}/>Certificações</h1>
+                <h1><PiCertificateDuotone size={70} />Certificações</h1>
             </article>
             <section className="col-12 slider" id="carrossel">
                 <div className={`slide-track ${isPaused ? 'paused' : ''}`}>
@@ -37,11 +39,17 @@ function Carrossel() {
                     <div className='slide' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={handleClick}>
                         <img src={cert2} className="img-fluid" alt="..." />
                     </div>
+                    {/* <div className='slide' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={handleClick}>
+                        <img src={cert8} className="img-fluid" alt="..." />
+                    </div> */}
                     <div className='slide' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={handleClick}>
                         <img src={cert3} className="img-fluid" alt="..." />
                     </div>
                     <div className='slide' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={handleClick}>
                         <img src={cert4} className="img-fluid" alt="..." />
+                    </div>
+                    <div className='slide' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={handleClick}>
+                        <img src={cert7} className="img-fluid" alt="..." />
                     </div>
                     <div className='slide' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={handleClick}>
                         <img src={cert5} className="img-fluid" alt="..." />
