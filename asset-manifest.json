@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.565192f0.css",
+    "main.js": "/static/js/main.b4c02b30.js",
+    "static/js/453.90dfd978.chunk.js": "/static/js/453.90dfd978.chunk.js",
+    "static/media/ReactNative.jpg": "/static/media/ReactNative.91aaeb5a522f6f113cc1.jpg",
+    "static/media/MySQLPython.jpg": "/static/media/MySQLPython.41a1ad2c3062a46e6846.jpg",
+    "static/media/tiringaStore.png": "/static/media/tiringaStore.c997085719808499f024.png",
+    "static/media/python.jpg": "/static/media/python.d2c013bcdfee3eddd278.jpg",
+    "static/media/certificado_etec.jpeg": "/static/media/certificado_etec.53a38cd1d6667fdf6b4d.jpeg",
+    "static/media/OracleSQL.jpg": "/static/media/OracleSQL.d95ccc83a405af1d2c39.jpg",
+    "static/media/photoshop.jpg": "/static/media/photoshop.f26fac8aee18157e80a4.jpg",
+    "static/media/Linux.jpg": "/static/media/Linux.68e49dc59d22c809eea9.jpg",
+    "index.html": "/index.html",
+    "main.565192f0.css.map": "/static/css/main.565192f0.css.map",
+    "main.b4c02b30.js.map": "/static/js/main.b4c02b30.js.map",
+    "453.90dfd978.chunk.js.map": "/static/js/453.90dfd978.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.565192f0.css",
+    "static/js/main.b4c02b30.js"
+  ]
+}
