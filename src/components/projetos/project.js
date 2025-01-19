@@ -28,20 +28,6 @@ export default function Project() {
                             </div>
                         </div>
                     </div>
-                    <div className="col-sm-12 col-lg-5 card-container">
-                        <div className="card">
-                            <div className="card-front">
-                                <img src={tiringaStore} className="img-fluid" alt="..." />
-                            </div>
-                            <div className="card-back text-bg-dark">
-                                <h2>Outro Projeto</h2>
-                                <div class="d-grid gap-2 col-6 mx-auto">
-                                    <button class="btn btn-outline-primary" type="button">Deploy</button>
-                                    <button class="btn btn-outline-secondary" type="button">Código</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     {/* Adicione mais cards conforme necessário */}
                 </div>
             </div>
