@@ -45,7 +45,7 @@ export default function Footer() {
                                 </svg>
                             </a>
                         </div>
-                        <p className="mb-0">© {new Date().getFullYear()} Seu Nome. Todos os direitos reservados.</p>
+                        <p className="mb-0">© {new Date().getFullYear()} Fabio Silva. Todos os direitos reservados.</p>
                     </Col>
                 </Row>
             </Container>
