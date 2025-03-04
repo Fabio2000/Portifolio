@@ -28,7 +28,7 @@ function Historico() {
                             aria-expanded="false"
                             aria-controls="panelsStayOpen-collapseOne"
                         >
-                            Suporte analista <a> - Abril 2021 - Present</a>
+                            Suporte analista ao desenvolvimento<a> - Abril 2021 - Present</a>
                         </button>
                     </h2>
                     <div id="panelsStayOpen-collapseOne" className="accordion-collapse collapse">
