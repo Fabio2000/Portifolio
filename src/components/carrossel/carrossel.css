@@ -1,52 +1,101 @@
 #containerCarrossel {
-    font-size: 3rem;
-    padding-top: 3rem;
-    color: #203246;
-    padding-bottom: 2rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    width: 100%; /* Removemos o max-width: 1200px para pegar a tela toda */
+    margin: 0 auto;
+    overflow-x: hidden; /* Impede que a tela inteira crie uma barra de rolagem indesejada */
 }
 
 #containerCarrossel h1 {
-    font-size: 3.5rem;
-    text-align: center;
-    padding-bottom: 4rem;
+    font-size: 3rem;
+    color: #203246; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    padding-top: 3rem;
+    margin-bottom: 0;
 }
 
 .slider {
     position: relative;
     overflow: hidden;
+    padding: 2rem 0; 
 }
 
+/* MATEMÁTICA ATUALIZADA: 450px de largura x 14 imagens totais */
 .slide-track {
     display: flex;
-    width: calc(350px * 18);
-    animation: scroll 40s linear infinite;
+    width: calc(450px * 14); 
+    animation: scroll 40s linear infinite; /* Deixei um pouco mais lento pois as imagens ficaram maiores */
 }
 
 .slide-track.paused {
     animation-play-state: paused;
 }
 
+/* CARDS MAIORES */
 .slide {
     display: flex;
     align-items: center;
-    padding: 1.2rem;
+    justify-content: center;
+    width: 450px; /* Era 300px, agora estão bem maiores para Desktop */
+    padding: 0 20px; /* Um pouco mais de espaço entre eles */
+    cursor: pointer;
 }
 
-img {
+.cert-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    overflow: hidden;
     width: 100%;
-    transition: transform 1s;
+}
+
+.cert-card img {
+    width: 100%;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.slide:hover .cert-card {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 .slide:hover img {
-    transform: scale(1.1);
+    transform: scale(1.05); 
 }
 
+/* MATEMÁTICA ATUALIZADA: Mover a trilha 7 imagens de 450px */
 @keyframes scroll {
     0% {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(calc(-250px * 9));
+        transform: translateX(calc(-450px * 7)); 
+    }
+}
+
+/* PROTEÇÃO PARA MOBILE: Volta pro tamanho menor em telas pequenas para não bugar o celular */
+@media (max-width: 980px) {
+    #containerCarrossel h1 {
+        font-size: 2.2rem;
+    }
+    #containerCarrossel h1 svg {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+    
+    .slide {
+        width: 300px;
+    }
+    .slide-track {
+        width: calc(300px * 14);
+    }
+    @keyframes scroll {
+        100% {
+            transform: translateX(calc(-300px * 7));
+        }
     }
 }

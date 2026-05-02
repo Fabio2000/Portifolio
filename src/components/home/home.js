@@ -1,14 +1,12 @@
-import react from 'react';
+import React from 'react';
 import './home.css'
 import ReactTypingEffect from 'react-typing-effect';
 
-
 function Home() {
-
     const title = '< Hello World />'
 
     return (
-        <section class="wrapper">
+        <section className="wrapper" id="home">
             <div id="stars"></div>
             <div id="stars2"></div>
             <div id="stars3"></div>
@@ -17,11 +15,15 @@ function Home() {
                 <h2>Sou o Fabio Silva</h2>
                 <h3>
                     <ReactTypingEffect
-                        text={['Analista de sistemas.', 'Desenvolvedor web.']}
-                        speed={80}           // Velocidade de digitação
-                        eraseSpeed={40}       // Velocidade de apagamento
-                        eraseDelay={2000}     // Atraso antes de apagar
-                        typingDelay={1000}    // Atraso antes de começar a digitar
+                        text={[
+                            'Analista Pleno.', 
+                            'Desenvolvedor Full Stack.',
+                            'Criador de Software SaaS.'
+                        ]}
+                        speed={80}
+                        eraseSpeed={40}
+                        eraseDelay={2000}
+                        typingDelay={1000}
                     />
                 </h3>
             </div>

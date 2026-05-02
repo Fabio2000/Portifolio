@@ -1,24 +1,29 @@
 import React from "react";
 import './resumo.css'
-import { Code } from "@phosphor-icons/react";
+import { FaCode } from "react-icons/fa6"; // Padronizando para react-icons
 
 function Resumo() {
     return (
-        <section className="geral">
+        <section className="geral" id="resumo">
             <div id="stars"></div>
             <div id="stars2"></div>
             <div id="stars3"></div>
-            <div>
-                <h1><Code size={55} height="bold" /> Resumo Profissional</h1>
-            </div>
-            <div className="resumo">
-                <h5>Sou um entusiasta da programação e estudo na área de desenvolvimento desde 2018. Durante esse período, tenho explorado várias linguagens de programação, adquirindo familiaridade especial com Python, JavaScript, React.js, HTML, CSS. Meu objetivo é, fazer pós graduação em segurança da informação.</h5>
-                <h5>Tenho experiência prática em projetos profissionais, com as seguintes tecnologias: Node.js, HTML, CSS, JavaScript, Bootstrap, Angular e WordPress. Atualmente trabalho como Suporte Analista Pleno na TM Informática. Continuo aperfeiçoando minhas habilidades e sempre me esforço para resolver problemas em equipe de maneira pró-ativa.</h5>
-                <h5>Além do desenvolvimento, tenho interesse em explorar outras áreas relacionadas à programação e estou constantemente buscando aprimorar minhas habilidades. Sou pró-ativo na resolução de problemas e valorizo o trabalho em equipe.
-                    Estou entusiasmado com a perspectiva de ingressar na área de desenvolvimento e estou comprometido em continuar aprendendo e crescendo profissionalmente.</h5>
+
+            <div className="resumo-content">
+                <h1><FaCode size={45} style={{ marginRight: '10px' }} /> Resumo Profissional</h1>
+
+                <div className="resumo-text">
+                    <p>Desenvolvedor Full Stack e Analista Pleno com experiência sólida na criação e manutenção de aplicações web. Com forte foco em resolução ágil de problemas, possuo domínio prático em ecossistemas baseados em JavaScript (React.js, Node.js, Angular) e PHP, além de sólida base em Python, HTML e CSS.</p>
+
+                    <p>Construí uma base técnica robusta ao longo de 4 anos atuando como Analista de Suporte na TM Informática, onde fui responsável por garantir a estabilidade e a evolução contínua de sistemas. Hoje, como desenvolvedor autônomo, lidero projetos de ponta a ponta.</p>
+
+                    <p>Como destaque da minha visão de produto, sou o fundador e desenvolvedor principal do RainFlow (agendamento.rainstore.net), um software SaaS de agendamento de elite. Neste projeto, gerencio todo o ciclo de vida da aplicação: desde a configuração de infraestrutura e domínios até a construção da arquitetura de backend, com disparos de notificações automatizadas e gestão de clientes.</p>
+
+                    <p>Focado em entregar código limpo, escalável e centrado no usuário, possuo uma visão estratégica sobre arquitetura de software. Em constante evolução, busco sempre as melhores práticas do mercado, com um forte interesse e direcionamento de estudos voltados para a área de Segurança da Informação.</p>
+                </div>
             </div>
         </section>
     )
 }
 
-export default Resumo
+export default Resumo;

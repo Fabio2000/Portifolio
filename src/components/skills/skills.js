@@ -1,58 +1,54 @@
 import React from "react";
 import './skills.css';
-import { FaHtml5, FaCss3, FaReact, FaNode } from "react-icons/fa";
+import { FaHtml5, FaReact, FaNodeJs, FaPhp, FaStripeS } from "react-icons/fa";
+import { FaLaptopCode } from "react-icons/fa6";
 import { RiJavascriptFill } from "react-icons/ri";
 import { IoLogoPython } from "react-icons/io5";
-import { SiMysql, SiNextdotjs, SiBootstrap, SiMongodb } from "react-icons/si";
-import { UserList } from "@phosphor-icons/react";
-import { Button } from 'reactstrap';
+import { SiMysql, SiNextdotjs, SiBootstrap, SiMongodb, SiWhatsapp } from "react-icons/si";
 
+// Lista atualizada com as tecnologias do SaaS (RainFlow) e cores ajustadas
 const skills = [
-  { name: 'HTML', icon: <FaHtml5 size={45} color="white" />, color: '#e34c26' },
-  { name: 'CSS', icon: <FaCss3 size={45} color="white" />, color: '#264de4' },
-  { name: 'JavaScript', icon: <RiJavascriptFill size={45} color="white" />, color: '#f0db4f' },
-  { name: 'Python', icon: <IoLogoPython size={45} color="white" />, color: '#3776ab' },
-  { name: 'MySQL', icon: <SiMysql size={45} color="white" />, color: '#4479a1' },
-  { name: 'Next.js', icon: <SiNextdotjs size={45} color="white" />, color: '#000000' },
-  { name: 'Bootstrap', icon: <SiBootstrap size={45} color="white" />, color: '#563d7c' },
-  { name: 'MongoDB', icon: <SiMongodb size={45} color="white" />, color: '#47a248' },
-  { name: 'Node.js', icon: <FaNode size={45} color="white" />, color: '#68a063' },
-  { name: 'React', icon: <FaReact size={45} color="white" />, color: '#61dbfb' },
+  { name: 'React.js', icon: <FaReact size={40} color="#61dbfb" />, color: '#61dbfb' },
+  { name: 'PHP', icon: <FaPhp size={40} color="#777bb4" />, color: '#777bb4' },
+  { name: 'Node.js', icon: <FaNodeJs size={40} color="#68a063" />, color: '#68a063' },
+  { name: 'Next.js', icon: <SiNextdotjs size={40} color="#000000" />, color: '#000000' },
+  { name: 'JavaScript', icon: <RiJavascriptFill size={40} color="#f0db4f" />, color: '#f0db4f' },
+  { name: 'APIs (Stripe, etc)', icon: <FaStripeS size={40} color="#635bff" />, color: '#635bff' },
+  { name: 'WhatsApp API', icon: <SiWhatsapp size={40} color="#25D366" />, color: '#25D366' },
+  { name: 'MySQL', icon: <SiMysql size={40} color="#4479a1" />, color: '#4479a1' },
+  { name: 'MongoDB', icon: <SiMongodb size={40} color="#47a248" />, color: '#47a248' },
+  { name: 'Python', icon: <IoLogoPython size={40} color="#3776ab" />, color: '#3776ab' },
+  { name: 'HTML5 & CSS3', icon: <FaHtml5 size={40} color="#e34c26" />, color: '#e34c26' },
+  { name: 'Bootstrap', icon: <SiBootstrap size={40} color="#563d7c" />, color: '#563d7c' },
 ];
 
 function Skills() {
   return (
-    <div className="container" id="SkillsContainer">
-      <div className="text-center">
+    <section className="container pt-5 pb-5" id="SkillsContainer">
+      <div className="text-center mb-5">
         <h1>
-          <UserList size={70} color="#203246" weight="bold" />
-          Habilidades
+          <FaLaptopCode size={50} style={{ marginRight: '15px', color: '#203246' }} />
+          Habilidades Técnicas
         </h1>
       </div>
-      <div className="row" id="SkillsButtons">
+      
+      {/* Mudamos para um grid que exibe mais cards lado a lado */}
+      <div className="row g-4" id="SkillsButtons">
         {skills.map((skill, index) => (
-          <div className="col-md-6 mb-3" key={index}>
-            <Button
-              style={{
-                backgroundColor: skill.color,
-                borderColor: skill.color,
-                boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                width: '100%',
-                height: '100%',
-                padding: '15px'
-              }}
-              className="skill-button"
+          <div className="col-lg-3 col-md-4 col-sm-6" key={index}>
+            <div 
+              className="skill-card"
+              style={{ '--hover-color': skill.color }} /* Passa a cor da tecnologia para o CSS */
             >
-              {skill.icon}
-              <strong className="ml-2">{skill.name}</strong>
-            </Button>
+              <div className="skill-icon">
+                {skill.icon}
+              </div>
+              <strong>{skill.name}</strong>
+            </div>
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
 

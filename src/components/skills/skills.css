@@ -1,33 +1,76 @@
+#SkillsContainer {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
 #SkillsContainer h1 {
     font-size: 3rem;
-    padding-top: 3rem;
-    color: #203246;
-    padding-bottom: 2rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: #203246; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    padding-top: 3rem; /* Garanta que tem o mesmo padding-top que o Histórico */
+    margin-bottom: 0;
 }
 
-#SkillsButtons .skill-button {
-    transition: transform 0.3s, box-shadow 0.3s;
+.skill-card {
+    background-color: #ffffff;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    /* Faz todos os ícones começarem do mesmo ponto no topo */
+    gap: 15px;
+    /* Espaçamento padrão entre ícone e texto */
     height: 100%;
-    width: 100%;
+    transition: all 0.3s ease;
+    cursor: default;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
 }
 
-#SkillsButtons .skill-button:hover {
+.skill-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    border-color: var(--hover-color);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
 }
 
-#SkillsButtons strong {
-    font-size: 1.4rem;
-    margin-left: 10px;
+.skill-card strong {
+    font-size: 1rem;
+    color: #334155;
+    font-weight: 600;
+    text-align: center;
+    margin-top: auto;
+    /* Empurra o texto sempre para a base do card */
+    min-height: 48px;
+    /* Força o espaço exato para caber 2 linhas se precisar */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.skill-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.skill-card:hover .skill-icon {
+    transform: scale(1.1);
 }
 
 @media (max-width: 980px) {
-    #SkillsContainer h1{
-        display:flex;
+    #SkillsContainer h1 {
+        font-size: 2.2rem;
     }
-    #SkillsContainer h1 svg{
-        margin-right: 1px;
-        width: 10rem;
+
+    #SkillsContainer h1 svg {
+        width: 2.5rem;
+        height: 2.5rem;
     }
 }
