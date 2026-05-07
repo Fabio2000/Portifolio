@@ -35,7 +35,7 @@ function Historico() {
                     </h2>
                     <div id="collapseRainflow" className="accordion-collapse collapse show">
                         <div className="accordion-body">
-                            <h5>RainFlow SaaS (agendamento.rainflow.net)</h5>
+                            <h5>RainFlow SaaS (agendamento.rainstore.net)</h5>
                             <p>Idealização, desenvolvimento e gestão completa de um software SaaS de agendamento de elite. Atuação autônoma cobrindo todo o ciclo de vida do produto: configuração de infraestrutura web, desenvolvimento Front-end (React.js) e Back-end (PHP), integrações com APIs externas (pagamentos via Stripe, notificações automatizadas via WhatsApp Business) e otimização contínua da experiência do usuário (UX/UI).</p>
                         </div>
                     </div>
