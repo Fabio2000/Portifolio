@@ -121,19 +121,57 @@ nav {
     order: 2;
   }
 
-  /* Desktop estreito: as secoes ficam centradas no espaco livre entre a
-     casinha e as redes. As margens automaticas tambem empurram as redes
-     para a direita. */
   .nav-secoes {
-    margin-left: auto;
-    margin-right: auto;
     white-space: nowrap;
   }
 }
 
-/* Acima de 1200px sobra espaco para centralizar de verdade na barra
-   inteira. Abaixo disso as secoes bateriam nas redes sociais. */
-@media (min-width: 1200px) {
+/* Entre 992 e 1199px o espaco e curto: o lado direito encolhe (bandeira
+   sem o codigo do idioma, espacamentos menores) para as secoes caberem
+   centralizadas de verdade sem bater nas redes sociais. O pior caso e o
+   espanhol, cujos rotulos sao os mais longos. */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .lang-code {
+    display: none;
+  }
+
+  .lang-current {
+    padding: 0 8px;
+  }
+
+  .icons {
+    gap: 6px;
+  }
+
+  /* Icones um pouco menores liberam os ~17px que faltavam em espanhol */
+  .icons svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .nav-controls {
+    margin-left: 10px;
+    gap: 8px;
+  }
+
+  /* .navbar por fora para empatar com o .navbar-expand-lg do Bootstrap */
+  .navbar .nav-secoes .nav-link {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+}
+
+/* De 1200 a 1399px o container ainda e 1140 e o menu volta ao tamanho
+   cheio: em espanhol sobrariam 6px ate as redes. Um respiro menor entre
+   os icones resolve sem precisar esconder o codigo do idioma. */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  .icons {
+    gap: 10px;
+  }
+}
+
+/* Centralizacao real na barra inteira */
+@media (min-width: 992px) {
   .navbar .container {
     position: relative;
   }
