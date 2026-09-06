@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import { FaTimes, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { useLanguage } from '../../i18n/LanguageContext';
 import './lightbox.css';
@@ -6,6 +7,11 @@ import './lightbox.css';
 /**
  * Abre o certificado em tamanho cheio.
  * Fecha no Esc, no X ou clicando no fundo; as setas navegam entre eles.
+ *
+ * Renderiza via portal direto no <body>: o carrossel fica dentro de uma div
+ * com data-aos, e o transform que o AOS aplica cria bloco de contenção para
+ * position: fixed. Sem o portal, o overlay se posicionaria contra o carrossel
+ * (e ainda seria cortado pelos overflow: hidden do caminho) em vez de cobrir a tela.
  */
 export default function Lightbox({ itens, indice, onFechar, onAnterior, onProximo }) {
   const { t } = useLanguage();
@@ -68,7 +74,7 @@ export default function Lightbox({ itens, indice, onFechar, onAnterior, onProxim
 
   const legenda = `${t('certificados.alt')} ${indice + 1} ${t('certificados.de')} ${itens.length}`;
 
-  return (
+  return createPortal(
     <div
       className="lightbox"
       onClick={aoClicarNoFundo}
@@ -100,7 +106,7 @@ export default function Lightbox({ itens, indice, onFechar, onAnterior, onProxim
         </button>
       )}
 
-      <figure className="lightbox-figura">
+      <figure className="lightbox-figura" onClick={aoClicarNoFundo}>
         <img src={atual} alt={legenda} className="lightbox-img" />
         <figcaption className="lightbox-legenda">
           {indice + 1} / {itens.length}
@@ -118,6 +124,7 @@ export default function Lightbox({ itens, indice, onFechar, onAnterior, onProxim
           <FaChevronRight size={22} />
         </button>
       )}
-    </div>
+    </div>,
+    document.body
   );
 }

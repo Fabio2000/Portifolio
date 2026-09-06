@@ -1,16 +1,27 @@
-/* Sobreposição do certificado em tamanho cheio */
+/* Sobreposição do certificado em tamanho cheio.
+   Renderizado por portal no <body>, então nenhum overflow: hidden ou
+   transform da página consegue cortar ou reposicionar este overlay. */
 
 .lightbox {
     position: fixed;
     inset: 0;
-    z-index: 2000;
+    /* dvh acompanha a barra de endereço do celular; vh é o fallback */
+    height: 100vh;
+    height: 100dvh;
+    width: 100vw;
+    z-index: 1000;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 3.5rem 1rem;
-    background: rgba(9, 10, 15, 0.92);
-    backdrop-filter: blur(6px);
-    animation: lightbox-entrada 0.25s ease;
+
+    /* O respiro lateral nunca fica menor que a largura das setas (52px mais
+       o afastamento da borda), senao elas passariam por cima da imagem em
+       telas medias como o tablet em pe. */
+    padding: clamp(3.25rem, 9vh, 4.5rem) clamp(4.25rem, 6vw, 5rem);
+
+    background: rgba(9, 10, 15, 0.94);
+    animation: lightbox-entrada 0.22s ease;
 }
 
 @keyframes lightbox-entrada {
@@ -22,29 +33,36 @@
     }
 }
 
+/* A figura ocupa o espaço disponível; o min-height: 0 é o que permite
+   a imagem encolher em vez de estourar a altura da tela. */
 .lightbox-figura {
     margin: 0;
-    max-width: min(1400px, 100%);
-    max-height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.85rem;
+    justify-content: center;
+    gap: 0.75rem;
+    max-width: 100%;
+    max-height: 100%;
+    min-height: 0;
+    min-width: 0;
 }
 
 .lightbox-img {
+    display: block;
     max-width: 100%;
-    /* desconta o espaço da legenda e do respiro do container */
-    max-height: calc(100vh - 8rem);
+    max-height: 100%;
+    min-height: 0;
     object-fit: contain;
-    border-radius: 10px;
+    border-radius: 8px;
     box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
     background: #ffffff;
 }
 
 .lightbox-legenda {
+    flex-shrink: 0;
     color: #94a3b8;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     letter-spacing: 0.12em;
     font-weight: 600;
 }
@@ -71,8 +89,8 @@
 }
 
 .lightbox-fechar {
-    top: 1rem;
-    right: 1rem;
+    top: max(0.75rem, env(safe-area-inset-top));
+    right: max(0.75rem, env(safe-area-inset-right));
     width: 44px;
     height: 44px;
 }
@@ -83,8 +101,8 @@
 
 .lightbox-nav {
     top: 50%;
-    width: 52px;
-    height: 52px;
+    width: clamp(40px, 9vw, 52px);
+    height: clamp(40px, 9vw, 52px);
     transform: translateY(-50%);
 }
 
@@ -93,29 +111,24 @@
 }
 
 .lightbox-anterior {
-    left: 1rem;
+    left: max(0.5rem, env(safe-area-inset-left));
 }
 
 .lightbox-proximo {
-    right: 1rem;
+    right: max(0.5rem, env(safe-area-inset-right));
 }
 
-@media (max-width: 768px) {
+/* Celular em pé: as setas descem para a base, longe do polegar que tenta
+   ampliar a imagem. Em paisagem elas continuam nas laterais, porque ali
+   a altura é o recurso escasso. */
+@media (max-width: 767.98px) and (orientation: portrait) {
     .lightbox {
-        padding: 4.5rem 0.75rem;
+        padding: 3.5rem 0.75rem 5.5rem;
     }
 
-    .lightbox-img {
-        max-height: calc(100vh - 11rem);
-    }
-
-    /* No celular as setas descem para a base, longe do polegar que
-       tenta ampliar a imagem */
     .lightbox-nav {
         top: auto;
-        bottom: 1.25rem;
-        width: 46px;
-        height: 46px;
+        bottom: max(1rem, env(safe-area-inset-bottom));
         transform: none;
     }
 
@@ -124,10 +137,33 @@
     }
 
     .lightbox-anterior {
-        left: calc(50% - 60px);
+        left: calc(50% - 58px);
     }
 
     .lightbox-proximo {
-        right: calc(50% - 60px);
+        right: calc(50% - 58px);
+    }
+}
+
+/* Telas baixas (celular deitado): tudo encolhe para a imagem sobrar */
+@media (max-height: 480px) {
+    .lightbox {
+        padding: 0.5rem clamp(3.25rem, 12vw, 4.5rem);
+    }
+
+    .lightbox-fechar {
+        width: 36px;
+        height: 36px;
+        top: 0.4rem;
+        right: 0.4rem;
+    }
+
+    .lightbox-nav {
+        width: 38px;
+        height: 38px;
+    }
+
+    .lightbox-legenda {
+        display: none;
     }
 }
