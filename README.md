@@ -8,7 +8,10 @@ O portfólio foi construído com uma interface moderna, focada em performance e 
 
 ### ✨ Principais Features
 - **Design Responsivo:** Adaptado perfeitamente para Desktop, Tablets e Mobile.
-- **Glassmorphism & Animações:** Efeitos de vidro fosco, cards 3D interativos e animações de scroll (AOS).
+- **Multi-idioma:** Português (padrão), Espanhol e Inglês, com seletor de bandeiras na navbar e preferência salva no navegador.
+- **Dark Mode:** Tema escuro suave, alternável na navbar e persistido entre visitas.
+- **Glassmorphism & Animações:** Efeitos de vidro fosco, cards 3D interativos e animações de scroll (AOS), respeitando `prefers-reduced-motion`.
+- **Cards de Projeto:** Viram no hover no desktop e no toque no celular, para os links ficarem sempre acessíveis.
 - **Integração de Contatos:** Links diretos para download de currículo em PDF, LinkedIn, GitHub e E-mail.
 - **Carrossel Infinito:** Exibição dinâmica de certificações técnicas.
 
@@ -22,6 +25,18 @@ Este projeto foi construído utilizando as seguintes tecnologias:
 * **[Bootstrap](https://getbootstrap.com/) & Reactstrap** - Framework de CSS para layout e componentes responsivos.
 * **CSS3 Customizado** - Estilização avançada, CSS variables, gradientes e keyframes.
 * **[React Icons](https://react-icons.github.io/react-icons/)** - Biblioteca de ícones vetorizados e otimizados.
+* **Context API** - Gerenciamento dos temas claro/escuro e da troca de idioma.
+
+---
+
+## 📂 Projetos em destaque
+
+| Projeto | O que é | Stack |
+| --- | --- | --- |
+| **[RainFlow SaaS](https://agendamento.rainstore.net)** | SaaS autoral de agendamento, com faturamento automatizado e notificações via WhatsApp | React.js, PHP, Stripe, MySQL |
+| **[FinançasFlow](https://blog.rainflow.com.br/)** | Blog autoral de educação financeira | React, TypeScript, Tailwind, Node.js |
+| **[Vitalize Consulta](https://vitalizeconsulta.com.br/)** | Site institucional para clínica odontológica (freelancer) | HTML5, CSS3, JavaScript, Cloudflare |
+| **[TiringaStore](https://tiringastore.vercel.app/)** | E-commerce completo, projeto de conclusão de curso | Next.js, Bootstrap, MongoDB, Node.js |
 
 ---
 

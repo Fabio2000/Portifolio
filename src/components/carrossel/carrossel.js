@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './carrossel.css';
 import { PiCertificateDuotone } from "react-icons/pi";
 import { useLanguage } from '../../i18n/LanguageContext';

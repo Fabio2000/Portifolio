@@ -1,5 +1,14 @@
 Proximas etapas
 
-Footer
-Tradução site EUA/PTBR
-DarkMode
+Concluido
+- Footer
+- Traducao do site (PT-BR, Espanhol e Ingles)
+- DarkMode
+- Cards de projeto acessiveis no celular
+- SEO, Open Graph e icones do manifest
+- Imagens otimizadas (4,7 MB -> 0,5 MB)
+
+Ideias
+- Lightbox para abrir os certificados em tamanho cheio
+- Secao de depoimentos
+- Formulario de contato

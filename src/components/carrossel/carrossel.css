@@ -22,10 +22,12 @@
     padding: 2rem 0; 
 }
 
-/* MATEMÁTICA ATUALIZADA: 450px de largura x 14 imagens totais */
+/* A trilha tem a lista de certificados duplicada. `fit-content` deixa a
+   largura sair do numero real de slides, entao adicionar ou remover um
+   certificado nao exige mexer em conta nenhuma aqui. */
 .slide-track {
     display: flex;
-    width: calc(450px * 14); 
+    width: fit-content;
     animation: scroll 40s linear infinite; /* Deixei um pouco mais lento pois as imagens ficaram maiores */
 }
 
@@ -36,6 +38,7 @@
 /* CARDS MAIORES */
 .slide {
     display: flex;
+    flex-shrink: 0; /* sem isso os slides encolhem e ficam menores que o previsto */
     align-items: center;
     justify-content: center;
     width: 450px; /* Era 300px, agora estão bem maiores para Desktop */
@@ -67,13 +70,15 @@
     transform: scale(1.05); 
 }
 
-/* MATEMÁTICA ATUALIZADA: Mover a trilha 7 imagens de 450px */
+/* Anda exatamente metade da trilha, que e uma copia inteira da lista:
+   ao terminar, a segunda metade esta onde a primeira comecou e o loop
+   emenda sem salto. */
 @keyframes scroll {
     0% {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(calc(-450px * 7)); 
+        transform: translateX(-50%);
     }
 }
 
@@ -89,13 +94,5 @@
     
     .slide {
         width: 300px;
-    }
-    .slide-track {
-        width: calc(300px * 14);
-    }
-    @keyframes scroll {
-        100% {
-            transform: translateX(calc(-300px * 7));
-        }
     }
 }

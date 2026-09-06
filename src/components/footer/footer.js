@@ -1,22 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import { FaLinkedinIn, FaGithub, FaEnvelope, FaRegPaperPlane } from 'react-icons/fa';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './footer.css';
 import { useLanguage } from '../../i18n/LanguageContext';
 
 export default function Footer() {
     const { t } = useLanguage();
-
-    useEffect(() => {
-        AOS.init({
-          duration: 1000, 
-          offset: 50, /* Começa a animar rapidinho quando chegar no final */
-          once: true, /* Anima só a primeira vez */
-        });
-    }, []);
 
     return (  
         <footer data-aos="fade-up" className="custom-footer pt-5 pb-4">

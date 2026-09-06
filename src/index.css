@@ -51,8 +51,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* O Bootstrap é importado depois deste arquivo e também estiliza `body`.
-   `html body` sobe a especificidade para o tema ganhar dele. */
+/* O Bootstrap também estiliza `body`. O prefixo `html` garante a
+   precedência do tema independente da ordem dos imports. */
 html,
 html body {
   background-color: var(--bg-page);
@@ -74,8 +74,8 @@ body, html {
 }
 
 /* Navegação por teclado precisa enxergar onde está.
-   O Bootstrap zera o outline em .btn e .nav-link e é importado depois
-   deste arquivo, por isso o prefixo `html` nesses dois casos. */
+   O Bootstrap zera o outline em .btn e .nav-link, daí o prefixo `html`
+   nesses dois casos. */
 :focus-visible,
 html .btn:focus-visible,
 html .nav-link:focus-visible,

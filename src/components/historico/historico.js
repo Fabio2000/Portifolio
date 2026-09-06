@@ -1,8 +1,6 @@
 import React from "react";
 import { FaBriefcase } from "react-icons/fa6";
 import "./historico.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { useLanguage } from '../../i18n/LanguageContext';
 
 function Historico() {

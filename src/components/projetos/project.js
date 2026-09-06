@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { FaCode, FaCalendarAlt, FaBolt, FaWallet, FaHandPointer } from "react-icons/fa"; // Importei o calendário para o SaaS
 import './project.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import tiringaStore from '../../imgs/tiringaStore.webp';
 import vitalizeLogo from '../../imgs/vitalizeLogo.webp';
 import { useLanguage } from '../../i18n/LanguageContext';
