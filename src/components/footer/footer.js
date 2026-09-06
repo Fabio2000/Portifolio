@@ -5,8 +5,11 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './footer.css';
+import { useLanguage } from '../../i18n/LanguageContext';
 
 export default function Footer() {
+    const { t } = useLanguage();
+
     useEffect(() => {
         AOS.init({
           duration: 1000, 
@@ -20,15 +23,15 @@ export default function Footer() {
             <Container id='containerFooter'>
                 <Row>
                     <Col className="col-lg-12 col-sm-12 text-center">
-                        <h2 className='footer-title'>Contato ✦ Redes Sociais</h2>
-                        <p className="footer-subtitle">Vamos criar algo incrível juntos?</p>
+                        <h2 className='footer-title'>{t('footer.title')}</h2>
+                        <p className="footer-subtitle">{t('footer.subtitle')}</p>
                     </Col>
                 </Row>
                 
                 <Row className="mt-4">
                     <Col className="text-center">
                         <div className="social-links mb-4">
-                            <a href='https://drive.google.com/file/d/1Lcohf6x8pifMrrRllkQgB40GPW_h7nn0/view?usp=sharing' target='_blank' rel="noopener noreferrer" title="Baixar Currículo">
+                            <a href='https://drive.google.com/file/d/1Lcohf6x8pifMrrRllkQgB40GPW_h7nn0/view?usp=sharing' target='_blank' rel="noopener noreferrer" title={t('nav.curriculo')}>
                                 <FaRegPaperPlane className="social-icon resume-icon" />
                             </a>
                             <a href="https://www.linkedin.com/in/fabio-rodrigues-da-silva-308a53185/" target='_blank' rel="noopener noreferrer" title="LinkedIn">
@@ -37,7 +40,7 @@ export default function Footer() {
                             <a href="https://github.com/Fabio2000/" target='_blank' rel="noopener noreferrer" title="GitHub">
                                 <FaGithub className="social-icon github-icon" />
                             </a>
-                            <a href="mailto:frsilva2101@gmail.com" target='_blank' rel="noopener noreferrer" title="Enviar E-mail">
+                            <a href="mailto:frsilva2101@gmail.com" target='_blank' rel="noopener noreferrer" title={t('nav.email')}>
                                 <FaEnvelope className="social-icon email-icon" />
                             </a>
                         </div>
@@ -45,7 +48,7 @@ export default function Footer() {
                         <div className="footer-divider"></div>
                         
                         <p className="copyright-text mb-0">
-                            © {new Date().getFullYear()} Fabio Silva. Todos os direitos reservados.
+                            © {new Date().getFullYear()} Fabio Silva. {t('footer.rights')}
                         </p>
                     </Col>
                 </Row>

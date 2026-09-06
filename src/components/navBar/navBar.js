@@ -9,20 +9,22 @@ import {
 } from 'reactstrap';
 import { FaRegPaperPlane, FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 import { FaHouse } from "react-icons/fa6";
-import { ThemeToggle } from '../toggle/toggle';
+import { useLanguage } from '../../i18n/LanguageContext';
+import { ThemeToggle, LanguageSwitcher } from '../toggle/toggle';
 import './navBar.css';
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeItem, setActiveItem] = useState('/');
   const [scrolled, setScrolled] = useState(false);
-  
+  const { t } = useLanguage();
+
   const toggle = () => setIsOpen(!isOpen);
 
   const handleItemClick = (path) => {
     setActiveItem(path);
     setIsOpen(false);
-    
+
     const element = document.getElementById(path.substring(1));
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
@@ -58,6 +60,7 @@ const NavBar = () => {
                   to="/home"
                   className={`nav-item-link ${activeItem === '/home' ? 'active' : ''}`}
                   onClick={() => handleItemClick('/home')}
+                  title={t('nav.home')}
                 >
                   {!isOpen && <FaHouse size={25} />}
                 </NavLink>
@@ -68,7 +71,7 @@ const NavBar = () => {
                   className={`nav-item-link ${activeItem === '/resumo' ? 'active' : ''}`}
                   onClick={() => handleItemClick('/resumo')}
                 >
-                  Resumo
+                  {t('nav.resumo')}
                   <span className="nav-item-bar"></span>
                 </NavLink>
               </NavItem>
@@ -78,7 +81,7 @@ const NavBar = () => {
                   className={`nav-item-link ${activeItem === '/Historico' ? 'active' : ''}`}
                   onClick={() => handleItemClick('/Historico')}
                 >
-                  Histórico
+                  {t('nav.historico')}
                   <span className="nav-item-bar"></span>
                 </NavLink>
               </NavItem>
@@ -88,7 +91,7 @@ const NavBar = () => {
                   className={`nav-item-link ${activeItem === '/Skills' ? 'active' : ''}`}
                   onClick={() => handleItemClick('/Skills')}
                 >
-                  Skills
+                  {t('nav.skills')}
                   <span className="nav-item-bar"></span>
                 </NavLink>
               </NavItem>
@@ -98,7 +101,7 @@ const NavBar = () => {
                   className={`nav-item-link ${activeItem === '/Carrossel' ? 'active' : ''}`}
                   onClick={() => handleItemClick('/Carrossel')}
                 >
-                  Formação
+                  {t('nav.formacao')}
                   <span className="nav-item-bar"></span>
                 </NavLink>
               </NavItem>
@@ -108,7 +111,7 @@ const NavBar = () => {
                   className={`nav-item-link ${activeItem === '/Projects' ? 'active' : ''}`}
                   onClick={() => handleItemClick('/Projects')}
                 >
-                  Projetos
+                  {t('nav.projetos')}
                   <span className="nav-item-bar"></span>
                 </NavLink>
               </NavItem>
@@ -116,34 +119,35 @@ const NavBar = () => {
             <Nav className="ms-auto icons">
               <NavItem>
                 <NavLink>
-                  <a href='https://drive.google.com/file/d/1Lcohf6x8pifMrrRllkQgB40GPW_h7nn0/view?usp=sharing' target='_blank' rel="noopener noreferrer">
+                  <a href='https://drive.google.com/file/d/1Lcohf6x8pifMrrRllkQgB40GPW_h7nn0/view?usp=sharing' target='_blank' rel="noopener noreferrer" title={t('nav.curriculo')}>
                     <FaRegPaperPlane size={25} />
                   </a>
                 </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink>
-                  <a href='https://www.linkedin.com/in/fabio-rodrigues-da-silva-308a53185/' target='_blank' rel="noopener noreferrer">
+                  <a href='https://www.linkedin.com/in/fabio-rodrigues-da-silva-308a53185/' target='_blank' rel="noopener noreferrer" title="LinkedIn">
                     <FaLinkedin size={25} />
                   </a>
                 </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink>
-                  <a href='https://github.com/Fabio2000/' target='_blank' rel="noopener noreferrer">
+                  <a href='https://github.com/Fabio2000/' target='_blank' rel="noopener noreferrer" title="GitHub">
                     <FaGithub size={25} />
                   </a>
                 </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink>
-                  <a href="mailto:frsilva2101@gmail.com" target='_blank' rel="noopener noreferrer">
+                  <a href="mailto:frsilva2101@gmail.com" target='_blank' rel="noopener noreferrer" title={t('nav.email')}>
                     <FaEnvelope size={25} />
                   </a>
                 </NavLink>
               </NavItem>
             </Nav>
             <div className="nav-controls">
+              <LanguageSwitcher />
               <ThemeToggle />
             </div>
           </Collapse>

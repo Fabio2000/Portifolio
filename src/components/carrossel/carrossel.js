@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './carrossel.css';
 import { PiCertificateDuotone } from "react-icons/pi";
+import { useLanguage } from '../../i18n/LanguageContext';
 
 // Importações das suas imagens
 import cert1 from '../../certificados/Linux.jpg';
@@ -16,6 +17,7 @@ import cert8 from '../../certificados/ensinoSuperior.png';
 
 function Carrossel() {
     const [isPaused, setIsPaused] = useState(false);
+    const { t } = useLanguage();
 
     // Colocamos todos os certificados em uma lista
     const certificates = [cert1, cert2, cert3, cert4, cert7, cert5, cert6, cert8];
@@ -28,7 +30,7 @@ function Carrossel() {
             <div className="text-center mb-5">
                 <h1>
                     <PiCertificateDuotone size={50} style={{ marginRight: '15px', color: 'var(--heading)' }} />
-                    Certificações
+                    {t('certificados.title')}
                 </h1>
             </div>
 
@@ -43,7 +45,7 @@ function Carrossel() {
                             onClick={() => setIsPaused(!isPaused)}
                         >
                             <div className="cert-card">
-                                <img src={cert} className="img-fluid" alt={`Certificado ${index + 1}`} />
+                                <img src={cert} className="img-fluid" alt={`${t('certificados.alt')} ${index + 1}`} />
                             </div>
                         </div>
                     ))}
