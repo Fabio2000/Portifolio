@@ -116,14 +116,13 @@
   font-weight: 600;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 991.98px) {
   .nav-controls {
     margin-left: 0;
-    margin-top: 10px;
-    padding-bottom: 10px;
-    justify-content: flex-start;
+    gap: 10px;
   }
 
+  /* Encostado na esquerda da barra, o menu abre para o mesmo lado */
   .lang-menu {
     right: auto;
     left: 0;

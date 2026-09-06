@@ -30,9 +30,10 @@ const NavBar = () => {
     }
   };
 
-  // Itens do menu. O primeiro é o ícone de casa, sem rótulo visível.
-  const menu = [
-    { path: '/home', label: t('nav.home'), icon: <FaHouse size={25} /> },
+  // A casinha fica sozinha na esquerda; as seções vão centralizadas no desktop.
+  const home = { path: '/home', label: t('nav.home'), icon: <FaHouse size={25} /> };
+
+  const secoes = [
     { path: '/resumo', label: t('nav.resumo') },
     { path: '/Historico', label: t('nav.historico') },
     { path: '/Skills', label: t('nav.skills') },
@@ -66,33 +67,47 @@ const NavBar = () => {
 
   return (
     <header>
-      <Navbar color="dark" dark expand="md" className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+      <Navbar color="dark" dark expand="lg" className={`navbar ${scrolled ? 'scrolled' : ''}`}>
         <div className="container">
+          {/* Fora do Collapse: no celular idioma e tema ficam sempre à vista,
+              sem precisar abrir o hambúrguer. */}
+          <div className="nav-controls">
+            <LanguageSwitcher />
+            <ThemeToggle />
+          </div>
           <NavbarToggler className='toggle' onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
-            <Nav className="me-auto" navbar>
-              {menu.map((item) => (
+            <Nav className="nav-home" navbar>
+              <NavItem>
+                {/* <button> no lugar de um <a> sem href: assim o item recebe
+                    foco por teclado e é anunciado corretamente. */}
+                <button
+                  type="button"
+                  className={`nav-link nav-item-link ${activeItem === home.path ? 'active' : ''}`}
+                  onClick={() => handleItemClick(home.path)}
+                  aria-current={activeItem === home.path ? 'true' : undefined}
+                  aria-label={home.label}
+                >
+                  {!isOpen && home.icon}
+                </button>
+              </NavItem>
+            </Nav>
+            <Nav className="nav-secoes" navbar>
+              {secoes.map((item) => (
                 <NavItem key={item.path}>
-                  {/* <button> no lugar de um <a> sem href: assim o item recebe
-                      foco por teclado e é anunciado corretamente. */}
                   <button
                     type="button"
                     className={`nav-link nav-item-link ${activeItem === item.path ? 'active' : ''}`}
                     onClick={() => handleItemClick(item.path)}
                     aria-current={activeItem === item.path ? 'true' : undefined}
-                    aria-label={item.icon ? item.label : undefined}
                   >
-                    {item.icon ? (!isOpen && item.icon) : (
-                      <>
-                        {item.label}
-                        <span className="nav-item-bar"></span>
-                      </>
-                    )}
+                    {item.label}
+                    <span className="nav-item-bar"></span>
                   </button>
                 </NavItem>
               ))}
             </Nav>
-            <Nav className="ms-auto icons">
+            <Nav className="icons">
               {social.map((item) => (
                 <NavItem key={item.href}>
                   {/* Um <a> só, sem o NavLink por fora, que também renderiza <a> */}
@@ -109,10 +124,6 @@ const NavBar = () => {
                 </NavItem>
               ))}
             </Nav>
-            <div className="nav-controls">
-              <LanguageSwitcher />
-              <ThemeToggle />
-            </div>
           </Collapse>
         </div>
       </Navbar>
