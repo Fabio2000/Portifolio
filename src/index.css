@@ -84,16 +84,3 @@ html .accordion-button:focus-visible {
   outline-offset: 3px;
   box-shadow: none;
 }
-
-/* Quem pediu menos movimento no sistema não deve levar estrelas,
-   carrossel infinito e animações de scroll na cara. */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
