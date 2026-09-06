@@ -53,6 +53,12 @@
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     overflow: hidden;
     width: 100%;
+    /* Agora é um <button>: zera a aparência nativa */
+    display: block;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    cursor: zoom-in;
 }
 
 .cert-card img {

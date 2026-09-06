@@ -58,6 +58,11 @@ const translations = {
     certificados: {
       title: 'Certificações',
       alt: 'Certificado',
+      abrir: 'Ver em tamanho cheio',
+      fechar: 'Fechar',
+      anterior: 'Certificado anterior',
+      proximo: 'Próximo certificado',
+      de: 'de',
     },
     projetos: {
       title: 'Projetos',
@@ -148,6 +153,11 @@ const translations = {
     certificados: {
       title: 'Certificaciones',
       alt: 'Certificado',
+      abrir: 'Ver en tamaño completo',
+      fechar: 'Cerrar',
+      anterior: 'Certificado anterior',
+      proximo: 'Certificado siguiente',
+      de: 'de',
     },
     projetos: {
       title: 'Proyectos',
@@ -238,6 +248,11 @@ const translations = {
     certificados: {
       title: 'Certifications',
       alt: 'Certificate',
+      abrir: 'View full size',
+      fechar: 'Close',
+      anterior: 'Previous certificate',
+      proximo: 'Next certificate',
+      de: 'of',
     },
     projetos: {
       title: 'Projects',

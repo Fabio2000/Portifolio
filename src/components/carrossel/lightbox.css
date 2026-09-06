@@ -1,0 +1,133 @@
+/* Sobreposição do certificado em tamanho cheio */
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3.5rem 1rem;
+    background: rgba(9, 10, 15, 0.92);
+    backdrop-filter: blur(6px);
+    animation: lightbox-entrada 0.25s ease;
+}
+
+@keyframes lightbox-entrada {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.lightbox-figura {
+    margin: 0;
+    max-width: min(1400px, 100%);
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.85rem;
+}
+
+.lightbox-img {
+    max-width: 100%;
+    /* desconta o espaço da legenda e do respiro do container */
+    max-height: calc(100vh - 8rem);
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+    background: #ffffff;
+}
+
+.lightbox-legenda {
+    color: #94a3b8;
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    font-weight: 600;
+}
+
+/* --- Botões --- */
+.lightbox-fechar,
+.lightbox-nav {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.08);
+    color: #f8fafc;
+    cursor: pointer;
+    transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.lightbox-fechar:hover,
+.lightbox-nav:hover {
+    background: rgba(255, 255, 255, 0.18);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.lightbox-fechar {
+    top: 1rem;
+    right: 1rem;
+    width: 44px;
+    height: 44px;
+}
+
+.lightbox-fechar:hover {
+    transform: rotate(90deg);
+}
+
+.lightbox-nav {
+    top: 50%;
+    width: 52px;
+    height: 52px;
+    transform: translateY(-50%);
+}
+
+.lightbox-nav:hover {
+    transform: translateY(-50%) scale(1.08);
+}
+
+.lightbox-anterior {
+    left: 1rem;
+}
+
+.lightbox-proximo {
+    right: 1rem;
+}
+
+@media (max-width: 768px) {
+    .lightbox {
+        padding: 4.5rem 0.75rem;
+    }
+
+    .lightbox-img {
+        max-height: calc(100vh - 11rem);
+    }
+
+    /* No celular as setas descem para a base, longe do polegar que
+       tenta ampliar a imagem */
+    .lightbox-nav {
+        top: auto;
+        bottom: 1.25rem;
+        width: 46px;
+        height: 46px;
+        transform: none;
+    }
+
+    .lightbox-nav:hover {
+        transform: scale(1.08);
+    }
+
+    .lightbox-anterior {
+        left: calc(50% - 60px);
+    }
+
+    .lightbox-proximo {
+        right: calc(50% - 60px);
+    }
+}
