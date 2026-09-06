@@ -3,7 +3,7 @@
     margin: 0 auto;
 }
 
-#projectContainer h1 {
+#projectContainer > .text-center h1 {
     font-size: 3rem;
     color: #203246; 
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
@@ -14,10 +14,10 @@
 }
 
 @media (max-width: 980px) {
-    #projectContainer h1 {
+    #projectContainer > .text-center h1 {
         font-size: 2.2rem;
     }
-    #projectContainer h1 svg {
+    #projectContainer > .text-center h1 svg {
         width: 2.5rem;
         height: 2.5rem;
     }
@@ -220,4 +220,159 @@
     font-size: 0.85rem !important;
     color: #38bdf8 !important;
     font-weight: 600;
+}
+
+/* --- FRENTE FINANÇASFLOW (Sem Imagem - CSS Puro) --- */
+.financas-front {
+    background: #0d1526; /* Azul petróleo escuro do blog */
+    border: 1px solid #1e293b;
+}
+
+.financas-logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.5s ease;
+}
+
+/* O quadrado arredondado verde esmeralda */
+.financas-icon-wrapper {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #5f8e7d 0%, #2f5d4c 100%);
+    border-radius: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(-3deg);
+    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.35), 0 15px 35px rgba(95, 142, 125, 0.25);
+    margin-bottom: 25px;
+    transition: box-shadow 0.3s ease;
+}
+
+.card-container:hover .financas-icon-wrapper {
+    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.35), 0 0px 40px rgba(95, 142, 125, 0.6);
+}
+
+.financas-main-icon {
+    font-size: 38px;
+    color: #ffffff;
+    transform: rotate(3deg);
+}
+
+/* Texto FinançasFlow */
+.financas-title {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.03em;
+    margin: 0;
+    line-height: 1;
+}
+
+/* O Flow em âmbar */
+.financas-highlight {
+    background: linear-gradient(135deg, #e0a94a 0%, #c98c37 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+.financas-subtitle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.financas-line {
+    height: 1px;
+    width: 24px;
+    background-color: #1e293b;
+}
+
+.financas-subtitle p {
+    color: #64748b;
+    font-size: 0.65rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.4em;
+    margin: 0;
+}
+
+/* --- FRENTE VITALIZE CONSULTA (Logo do cliente) --- */
+.vitalize-front {
+    background: linear-gradient(160deg, #3d4a57 0%, #64727f 30%, #7a8a98 50%, #64727f 70%, #4a5568 100%);
+    border: 1px solid #4a5568;
+}
+
+.vitalize-logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    transition: transform 0.5s ease;
+}
+
+.vitalize-front .vitalize-logo {
+    width: auto;
+    height: auto;
+    max-width: 72%;
+    max-height: 13rem;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.35));
+    transition: filter 0.3s ease;
+}
+
+.card-container:hover .vitalize-front .vitalize-logo {
+    filter: drop-shadow(0 0px 25px rgba(240, 208, 96, 0.35));
+}
+
+/* A linha dourada da identidade visual da clínica */
+.vitalize-gold-line {
+    width: 70px;
+    height: 2px;
+    background: linear-gradient(135deg, #d4af37, #f0d060, #d4af37);
+    margin-top: 18px;
+}
+
+.vitalize-subtitle p {
+    color: #e8e8e8;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.4em;
+    margin: 14px 0 0 0;
+}
+
+/* Botão verde combinando com a marca FinançasFlow */
+.btn-emerald {
+    color: #7fbfa5;
+    border: 1px solid #5f8e7d;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-emerald:hover,
+.btn-emerald:focus {
+    color: #0d1526;
+    background: linear-gradient(135deg, #5f8e7d, #7fbfa5, #5f8e7d);
+    border-color: #7fbfa5;
+}
+
+/* Botão dourado combinando com a marca Vitalize */
+.btn-gold {
+    color: #f0d060;
+    border: 1px solid #d4af37;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-gold:hover,
+.btn-gold:focus {
+    color: #1e293b;
+    background: linear-gradient(135deg, #d4af37, #f0d060, #d4af37);
+    border-color: #f0d060;
 }

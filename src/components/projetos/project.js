@@ -1,8 +1,9 @@
 import React from "react";
-import { FaCode, FaCalendarAlt, FaBolt } from "react-icons/fa"; // Importei o calendário para o SaaS
+import { FaCode, FaCalendarAlt, FaBolt, FaWallet } from "react-icons/fa"; // Importei o calendário para o SaaS
 import './project.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import tiringaStore from '../../imgs/tiringaStore.png';
+import vitalizeLogo from '../../imgs/vitalizeLogo.png';
 
 export default function Project() {
     return (
@@ -66,7 +67,59 @@ export default function Project() {
                     </div>
                 </div>
 
-                {/* Você pode adicionar o card da RainStore aqui no futuro seguindo o mesmo molde! */}
+                {/* PROJETO 3: FINANÇASFLOW (Blog Autoral) */}
+                <div className="col-sm-12 col-md-6 col-lg-5 card-container mb-4">
+                    <div className="card">
+                        <div className="card-front no-image-front financas-front">
+                            <div className="financas-logo-container">
+                                <div className="financas-icon-wrapper">
+                                    <FaWallet className="financas-main-icon" />
+                                </div>
+                                <h1 className="financas-title">
+                                    Finanças<span className="financas-highlight">Flow</span>
+                                </h1>
+                                <div className="financas-subtitle">
+                                    <div className="financas-line"></div>
+                                    <p>BLOG FINANCEIRO</p>
+                                    <div className="financas-line"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="card-back text-bg-dark">
+                            <h2>FinançasFlow</h2>
+                            <h5>Blog Autoral</h5>
+                            <p>Blog de educação financeira com artigos sobre economia, investimentos e organização pessoal.</p>
+                            <p className="tech-stack">React • TypeScript • Tailwind • Node.js</p>
+                            <div className="d-grid gap-2 col-8 mx-auto mt-3">
+                                <a target='_blank' rel="noreferrer" href="https://blog.rainflow.com.br/" className="btn btn-emerald">Acessar Blog</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* PROJETO 4: VITALIZE CONSULTA (Freelancer) */}
+                <div className="col-sm-12 col-md-6 col-lg-5 card-container mb-4">
+                    <div className="card">
+                        <div className="card-front no-image-front vitalize-front">
+                            <div className="vitalize-logo-container">
+                                <img src={vitalizeLogo} className="vitalize-logo" alt="Logo Vitalize Consulta" />
+                                <div className="vitalize-gold-line"></div>
+                                <div className="vitalize-subtitle">
+                                    <p>ODONTOLOGIA</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="card-back text-bg-dark">
+                            <h2>Vitalize Consulta</h2>
+                            <h5>Projeto Freelancer</h5>
+                            <p>Site institucional para clínica odontológica em Taguatinga Norte (DF), com foco em performance e SEO.</p>
+                            <p className="tech-stack">HTML5 • CSS3 • JavaScript • Cloudflare</p>
+                            <div className="d-grid gap-2 col-8 mx-auto mt-3">
+                                <a target='_blank' rel="noreferrer" href="https://vitalizeconsulta.com.br/" className="btn btn-gold">Ver Site</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </section>
