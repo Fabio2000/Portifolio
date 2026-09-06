@@ -61,6 +61,7 @@ const translations = {
     },
     projetos: {
       title: 'Projetos',
+      hint: 'Toque para ver',
       rainflow: {
         subtitle: 'Software Autoral',
         body: 'SaaS de agendamento de elite com faturamento automatizado e notificações via WhatsApp.',
@@ -150,6 +151,7 @@ const translations = {
     },
     projetos: {
       title: 'Proyectos',
+      hint: 'Toca para ver',
       rainflow: {
         subtitle: 'Software Propio',
         body: 'SaaS de agendamiento de alto nivel con facturación automatizada y notificaciones vía WhatsApp.',
@@ -239,6 +241,7 @@ const translations = {
     },
     projetos: {
       title: 'Projects',
+      hint: 'Tap to see',
       rainflow: {
         subtitle: 'Own Software',
         body: 'Premium scheduling SaaS with automated billing and WhatsApp notifications.',

@@ -29,6 +29,14 @@
 .card-container {
     perspective: 1000px;
     height: 24rem; /* Um pouco mais alto para caber os textos confortavelmente */
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+/* Navegação por teclado precisa enxergar onde está */
+.card-container:focus-visible {
+    outline: 3px solid var(--accent-soft);
+    outline-offset: 4px;
 }
 
 .card {
@@ -41,7 +49,15 @@
     background: transparent;
 }
 
-.card-container:hover .card {
+/* Vira no hover só onde existe hover de verdade (mouse). No celular
+   isso nunca dispara, por isso o clique/toque controla o .is-flipped. */
+@media (hover: hover) and (pointer: fine) {
+    .card-container:hover .card {
+        transform: rotateY(180deg);
+    }
+}
+
+.card-container.is-flipped .card {
     transform: rotateY(180deg);
 }
 
@@ -57,6 +73,38 @@
     border-radius: 12px;
     box-shadow: var(--shadow-card);
     overflow: hidden;
+}
+
+/* --- DICA DE TOQUE (só aparece em quem não tem hover) --- */
+.card-hint {
+    display: none;
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    align-items: center;
+    gap: 6px;
+    padding: 5px 12px;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #e2e8f0;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    backdrop-filter: blur(4px);
+    pointer-events: none;
+}
+
+@media (hover: none), (pointer: coarse) {
+    .card-hint {
+        display: inline-flex;
+    }
+    .card-container.is-flipped .card-hint {
+        opacity: 0;
+    }
 }
 
 /* --- FRENTE PADRÃO (Com Imagem) --- */
