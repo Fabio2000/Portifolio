@@ -27,7 +27,7 @@ function Carrossel() {
         <section className="container-fluid px-0 pt-5 pb-5" id="containerCarrossel">
             <div className="text-center mb-5">
                 <h1>
-                    <PiCertificateDuotone size={50} style={{ marginRight: '15px', color: '#203246' }} />
+                    <PiCertificateDuotone size={50} style={{ marginRight: '15px', color: 'var(--heading)' }} />
                     Certificações
                 </h1>
             </div>

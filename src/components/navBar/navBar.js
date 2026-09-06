@@ -9,6 +9,7 @@ import {
 } from 'reactstrap';
 import { FaRegPaperPlane, FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 import { FaHouse } from "react-icons/fa6";
+import { ThemeToggle } from '../toggle/toggle';
 import './navBar.css';
 
 const NavBar = () => {
@@ -142,6 +143,9 @@ const NavBar = () => {
                 </NavLink>
               </NavItem>
             </Nav>
+            <div className="nav-controls">
+              <ThemeToggle />
+            </div>
           </Collapse>
         </div>
       </Navbar>

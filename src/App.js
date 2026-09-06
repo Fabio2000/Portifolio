@@ -10,6 +10,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 import Footer from './components/footer/footer';
+import { ThemeProvider } from './components/toggle/theme';
 
 function App() {
   useEffect(() => {
@@ -21,35 +22,36 @@ function App() {
   }, []);
 
   return (
-    <section>
-      <NavBar />
-      <div id='home'>
-        <Home />
-      </div>
-      <div id='resumo'>
-        <Resumo />
-      </div>
-      <div className='container'>
-        <div className='row'>
-          <div className='col-sm-12 col-md-6' id='Historico' data-aos="fade-up">
-            <Historico />
-          </div>
-          <div className='col-sm-12 col-md-6' id='Skills' data-aos="fade-up">
-            <Skills />
+    <ThemeProvider>
+      <section>
+        <NavBar />
+        <div id='home'>
+          <Home />
+        </div>
+        <div id='resumo'>
+          <Resumo />
+        </div>
+        <div className='container'>
+          <div className='row'>
+            <div className='col-sm-12 col-md-6' id='Historico' data-aos="fade-up">
+              <Historico />
+            </div>
+            <div className='col-sm-12 col-md-6' id='Skills' data-aos="fade-up">
+              <Skills />
+            </div>
           </div>
         </div>
-      </div>
-      <div className='col-lg-12' id='Carrossel' data-aos="fade-up">
-        <Carrossel />
-      </div>
-      <div id='Projects' data-aos="fade-up">
-        <Project />
-      </div>
-      <div id='footer'>
-        <Footer />
-      </div>
-      
-    </section>
+        <div className='col-lg-12' id='Carrossel' data-aos="fade-up">
+          <Carrossel />
+        </div>
+        <div id='Projects' data-aos="fade-up">
+          <Project />
+        </div>
+        <div id='footer'>
+          <Footer />
+        </div>
+      </section>
+    </ThemeProvider>
   );
 }
 

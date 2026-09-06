@@ -6,12 +6,13 @@ import { RiJavascriptFill } from "react-icons/ri";
 import { IoLogoPython } from "react-icons/io5";
 import { SiMysql, SiNextdotjs, SiBootstrap, SiMongodb, SiWhatsapp } from "react-icons/si";
 
-// Lista atualizada com as tecnologias do SaaS (RainFlow) e cores ajustadas
+// Lista atualizada com as tecnologias do SaaS (RainFlow) e cores ajustadas.
+// O Next.js nao recebe cor fixa: a logo e preta e precisa clarear no dark.
 const skills = [
   { name: 'React.js', icon: <FaReact size={40} color="#61dbfb" />, color: '#61dbfb' },
   { name: 'PHP', icon: <FaPhp size={40} color="#777bb4" />, color: '#777bb4' },
   { name: 'Node.js', icon: <FaNodeJs size={40} color="#68a063" />, color: '#68a063' },
-  { name: 'Next.js', icon: <SiNextdotjs size={40} color="#000000" />, color: '#000000' },
+  { name: 'Next.js', icon: <SiNextdotjs size={40} className="adaptive-icon" />, color: 'var(--text-strong)' },
   { name: 'JavaScript', icon: <RiJavascriptFill size={40} color="#f0db4f" />, color: '#f0db4f' },
   { name: 'APIs (Stripe, etc)', icon: <FaStripeS size={40} color="#635bff" />, color: '#635bff' },
   { name: 'WhatsApp API', icon: <SiWhatsapp size={40} color="#25D366" />, color: '#25D366' },
@@ -27,7 +28,7 @@ function Skills() {
     <section className="container pt-5 pb-5" id="SkillsContainer">
       <div className="text-center mb-5">
         <h1>
-          <FaLaptopCode size={50} style={{ marginRight: '15px', color: '#203246' }} />
+          <FaLaptopCode size={50} style={{ marginRight: '15px', color: 'var(--heading)' }} />
           Habilidades Técnicas
         </h1>
       </div>

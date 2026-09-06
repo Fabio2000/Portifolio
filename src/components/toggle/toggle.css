@@ -1,0 +1,39 @@
+/* Controles da navbar */
+
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: 18px;
+}
+
+/* --- Botão de tema --- */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+  color: #f8fafc;
+  cursor: pointer;
+  transition: color 0.3s ease, background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+  color: #fbbf24;
+  border-color: rgba(251, 191, 36, 0.5);
+  background: rgba(251, 191, 36, 0.12);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .nav-controls {
+    margin-left: 0;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    justify-content: flex-start;
+  }
+}

@@ -7,28 +7,28 @@
 #HistoricoContainer h1 {
     font-size: 3rem;
     padding-top: 3rem;
-    color: #203246; /* Sua cor original */
+    color: var(--heading); /* Sua cor original */
     padding-bottom: 2rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15); /* Sombra levemente suavizada para não sujar o branco */
+    text-shadow: 2px 2px 4px var(--heading-shadow); /* Sombra levemente suavizada para não sujar o branco */
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 700;
 }
 
-/* Customização do Acordeão para Fundo Branco (Design Clean) */
+/* Customização do Acordeão (Design Clean, acompanha o tema) */
 .custom-accordion .accordion-item {
-    background-color: #ffffff;
-    border: 1px solid #e2e8f0; /* Borda cinza bem clara e elegante */
+    background-color: var(--surface);
+    border: 1px solid var(--border); /* Borda cinza bem clara e elegante */
     border-radius: 8px !important;
     margin-bottom: 1rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Sombra super suave */
+    box-shadow: var(--shadow-sm); /* Sombra super suave */
     overflow: hidden;
 }
 
 .custom-accordion .accordion-button {
-    background-color: #ffffff;
-    color: #203246;
+    background-color: var(--surface);
+    color: var(--heading);
     box-shadow: none;
     padding: 1.5rem;
     font-weight: 600;
@@ -36,19 +36,24 @@
 
 /* Quando a caixinha estiver aberta */
 .custom-accordion .accordion-button:not(.collapsed) {
-    background-color: #f8fafc; /* Um fundo cinza quase branco para destacar */
-    color: #0284c7; /* Azul corporativo */
-    box-shadow: inset 0 -1px 0 #e2e8f0;
+    background-color: var(--surface-2); /* Um fundo levemente destacado */
+    color: var(--accent); /* Azul corporativo */
+    box-shadow: inset 0 -1px 0 var(--border);
+}
+
+/* A setinha do Bootstrap é um SVG escuro: no dark ela é invertida */
+.custom-accordion .accordion-button::after {
+    filter: var(--accordion-icon-filter);
 }
 
 .custom-accordion .accordion-body {
-    color: #475569; /* Cinza escuro para não cansar a vista na leitura */
+    color: var(--text-body); /* Cinza escuro para não cansar a vista na leitura */
     line-height: 1.7;
     padding: 1.5rem;
 }
 
 .custom-accordion .accordion-body h5 {
-    color: #0f172a; /* Título quase preto */
+    color: var(--text-strong); /* Título quase preto */
     font-weight: 700;
     margin-bottom: 1rem;
     font-size: 1.2rem;
@@ -57,13 +62,13 @@
 /* Estilo para a data */
 .date-badge {
     font-size: 0.85rem;
-    color: #64748b;
+    color: var(--text-muted);
     margin-top: 5px;
     font-weight: 400;
 }
 
 .accordion-button:not(.collapsed) .date-badge {
-    color: #0ea5e9; /* Azul combinando quando aberto */
+    color: var(--accent-soft); /* Azul combinando quando aberto */
 }
 
 @media (max-width: 980px) {

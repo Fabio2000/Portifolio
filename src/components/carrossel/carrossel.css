@@ -6,8 +6,8 @@
 
 #containerCarrossel h1 {
     font-size: 3rem;
-    color: #203246; 
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    color: var(--heading);
+    text-shadow: 2px 2px 4px var(--heading-shadow);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -44,9 +44,9 @@
 }
 
 .cert-card {
-    background-color: #fff;
+    background-color: var(--surface);
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-card);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     overflow: hidden;
     width: 100%;
@@ -60,7 +60,7 @@
 
 .slide:hover .cert-card {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--shadow-md);
 }
 
 .slide:hover img {

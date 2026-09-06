@@ -9,7 +9,7 @@ export default function Project() {
     return (
         <section className="project container pt-5 pb-5" id="projectContainer">
             <div className="text-center mb-5">
-                <h1><FaCode size={50} style={{ marginRight: '15px', color: '#203246' }} /> Projetos</h1>
+                <h1><FaCode size={50} style={{ marginRight: '15px', color: 'var(--heading)' }} /> Projetos</h1>
             </div>
 
             <div className="row justify-content-center" id="cardsContainer">

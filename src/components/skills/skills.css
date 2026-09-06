@@ -5,8 +5,8 @@
 
 #SkillsContainer h1 {
     font-size: 3rem;
-    color: #203246; 
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    color: var(--heading);
+    text-shadow: 2px 2px 4px var(--heading-shadow);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -16,8 +16,8 @@
 }
 
 .skill-card {
-    background-color: #ffffff;
-    border: 2px solid #e2e8f0;
+    background-color: var(--surface);
+    border: 2px solid var(--border);
     border-radius: 12px;
     padding: 1.5rem 1rem;
     display: flex;
@@ -30,18 +30,18 @@
     height: 100%;
     transition: all 0.3s ease;
     cursor: default;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+    box-shadow: var(--shadow-sm);
 }
 
 .skill-card:hover {
     transform: translateY(-5px);
     border-color: var(--hover-color);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--shadow-md);
 }
 
 .skill-card strong {
     font-size: 1rem;
-    color: #334155;
+    color: var(--text-strong);
     font-weight: 600;
     text-align: center;
     margin-top: auto;
@@ -62,6 +62,11 @@
 
 .skill-card:hover .skill-icon {
     transform: scale(1.1);
+}
+
+/* A logo do Next.js e preta: no dark ela acompanha o texto claro */
+.adaptive-icon {
+    color: var(--text-strong);
 }
 
 @media (max-width: 980px) {
