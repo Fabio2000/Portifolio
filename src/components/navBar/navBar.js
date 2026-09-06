@@ -5,7 +5,6 @@ import {
   NavbarToggler,
   Nav,
   NavItem,
-  NavLink,
 } from 'reactstrap';
 import { FaRegPaperPlane, FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 import { FaHouse } from "react-icons/fa6";
@@ -31,6 +30,23 @@ const NavBar = () => {
     }
   };
 
+  // Itens do menu. O primeiro é o ícone de casa, sem rótulo visível.
+  const menu = [
+    { path: '/home', label: t('nav.home'), icon: <FaHouse size={25} /> },
+    { path: '/resumo', label: t('nav.resumo') },
+    { path: '/Historico', label: t('nav.historico') },
+    { path: '/Skills', label: t('nav.skills') },
+    { path: '/Carrossel', label: t('nav.formacao') },
+    { path: '/Projects', label: t('nav.projetos') },
+  ];
+
+  const social = [
+    { href: 'https://drive.google.com/file/d/1Lcohf6x8pifMrrRllkQgB40GPW_h7nn0/view?usp=sharing', title: t('nav.curriculo'), icon: <FaRegPaperPlane size={25} /> },
+    { href: 'https://www.linkedin.com/in/fabio-rodrigues-da-silva-308a53185/', title: 'LinkedIn', icon: <FaLinkedin size={25} /> },
+    { href: 'https://github.com/Fabio2000/', title: 'GitHub', icon: <FaGithub size={25} /> },
+    { href: 'mailto:frsilva2101@gmail.com', title: t('nav.email'), icon: <FaEnvelope size={25} /> },
+  ];
+
   useEffect(() => {
     const handleScroll = () => {
       const offset = window.scrollY;
@@ -55,96 +71,43 @@ const NavBar = () => {
           <NavbarToggler className='toggle' onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="me-auto" navbar>
-              <NavItem>
-                <NavLink
-                  to="/home"
-                  className={`nav-item-link ${activeItem === '/home' ? 'active' : ''}`}
-                  onClick={() => handleItemClick('/home')}
-                  title={t('nav.home')}
-                >
-                  {!isOpen && <FaHouse size={25} />}
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  to="/resumo"
-                  className={`nav-item-link ${activeItem === '/resumo' ? 'active' : ''}`}
-                  onClick={() => handleItemClick('/resumo')}
-                >
-                  {t('nav.resumo')}
-                  <span className="nav-item-bar"></span>
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  to="/Historico"
-                  className={`nav-item-link ${activeItem === '/Historico' ? 'active' : ''}`}
-                  onClick={() => handleItemClick('/Historico')}
-                >
-                  {t('nav.historico')}
-                  <span className="nav-item-bar"></span>
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  to="/Skills"
-                  className={`nav-item-link ${activeItem === '/Skills' ? 'active' : ''}`}
-                  onClick={() => handleItemClick('/Skills')}
-                >
-                  {t('nav.skills')}
-                  <span className="nav-item-bar"></span>
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  to="/Carrossel"
-                  className={`nav-item-link ${activeItem === '/Carrossel' ? 'active' : ''}`}
-                  onClick={() => handleItemClick('/Carrossel')}
-                >
-                  {t('nav.formacao')}
-                  <span className="nav-item-bar"></span>
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  to="/Projects"
-                  className={`nav-item-link ${activeItem === '/Projects' ? 'active' : ''}`}
-                  onClick={() => handleItemClick('/Projects')}
-                >
-                  {t('nav.projetos')}
-                  <span className="nav-item-bar"></span>
-                </NavLink>
-              </NavItem>
+              {menu.map((item) => (
+                <NavItem key={item.path}>
+                  {/* <button> no lugar de um <a> sem href: assim o item recebe
+                      foco por teclado e é anunciado corretamente. */}
+                  <button
+                    type="button"
+                    className={`nav-link nav-item-link ${activeItem === item.path ? 'active' : ''}`}
+                    onClick={() => handleItemClick(item.path)}
+                    aria-current={activeItem === item.path ? 'true' : undefined}
+                    aria-label={item.icon ? item.label : undefined}
+                  >
+                    {item.icon ? (!isOpen && item.icon) : (
+                      <>
+                        {item.label}
+                        <span className="nav-item-bar"></span>
+                      </>
+                    )}
+                  </button>
+                </NavItem>
+              ))}
             </Nav>
             <Nav className="ms-auto icons">
-              <NavItem>
-                <NavLink>
-                  <a href='https://drive.google.com/file/d/1Lcohf6x8pifMrrRllkQgB40GPW_h7nn0/view?usp=sharing' target='_blank' rel="noopener noreferrer" title={t('nav.curriculo')}>
-                    <FaRegPaperPlane size={25} />
+              {social.map((item) => (
+                <NavItem key={item.href}>
+                  {/* Um <a> só, sem o NavLink por fora, que também renderiza <a> */}
+                  <a
+                    className="nav-link"
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title={item.title}
+                    aria-label={item.title}
+                  >
+                    {item.icon}
                   </a>
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink>
-                  <a href='https://www.linkedin.com/in/fabio-rodrigues-da-silva-308a53185/' target='_blank' rel="noopener noreferrer" title="LinkedIn">
-                    <FaLinkedin size={25} />
-                  </a>
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink>
-                  <a href='https://github.com/Fabio2000/' target='_blank' rel="noopener noreferrer" title="GitHub">
-                    <FaGithub size={25} />
-                  </a>
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink>
-                  <a href="mailto:frsilva2101@gmail.com" target='_blank' rel="noopener noreferrer" title={t('nav.email')}>
-                    <FaEnvelope size={25} />
-                  </a>
-                </NavLink>
-              </NavItem>
+                </NavItem>
+              ))}
             </Nav>
             <div className="nav-controls">
               <LanguageSwitcher />

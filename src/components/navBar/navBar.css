@@ -24,6 +24,11 @@ nav {
   padding-bottom: 8px;
   transition: all 0.3s ease;
   cursor: pointer;
+  /* Agora é um <button>: zera a aparência nativa e herda a tipografia */
+  background: none;
+  border: 0;
+  font: inherit;
+  text-align: left;
 }
 
 .nav-item-bar {
@@ -58,6 +63,7 @@ nav {
 
 .icons a {
   color: aliceblue;
+  padding: 0;
   transition: color 0.3s ease, transform 0.3s ease;
   display: inline-block;
 }

@@ -72,3 +72,28 @@ body, html {
   padding: 0;
   box-sizing: border-box;
 }
+
+/* Navegação por teclado precisa enxergar onde está.
+   O Bootstrap zera o outline em .btn e .nav-link e é importado depois
+   deste arquivo, por isso o prefixo `html` nesses dois casos. */
+:focus-visible,
+html .btn:focus-visible,
+html .nav-link:focus-visible,
+html .accordion-button:focus-visible {
+  outline: 3px solid var(--accent-soft);
+  outline-offset: 3px;
+  box-shadow: none;
+}
+
+/* Quem pediu menos movimento no sistema não deve levar estrelas,
+   carrossel infinito e animações de scroll na cara. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
