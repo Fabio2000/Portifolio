@@ -7,10 +7,10 @@ function Resumo() {
     const { t } = useLanguage();
 
     return (
-        <section className="geral" id="resumo">
-            <div id="stars"></div>
-            <div id="stars2"></div>
-            <div id="stars3"></div>
+        <section className="geral">
+            <div className="stars"></div>
+            <div className="stars2"></div>
+            <div className="stars3"></div>
 
             <div className="resumo-content">
                 <h1><FaCode size={45} style={{ marginRight: '10px' }} /> {t('resumo.title')}</h1>

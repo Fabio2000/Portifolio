@@ -8,10 +8,10 @@ function Home() {
     const { lang, t } = useLanguage();
 
     return (
-        <section className="wrapper" id="home">
-            <div id="stars"></div>
-            <div id="stars2"></div>
-            <div id="stars3"></div>
+        <section className="wrapper">
+            <div className="stars"></div>
+            <div className="stars2"></div>
+            <div className="stars3"></div>
             <div id="title">
                 <h1>{title}</h1>
                 <h2>{t('home.greeting')}</h2>
