@@ -5,15 +5,15 @@ import { PiCertificateDuotone } from "react-icons/pi";
 import { useLanguage } from '../../i18n/LanguageContext';
 
 // Importações das suas imagens
-import cert1 from '../../certificados/Linux.jpg';
-import cert2 from '../../certificados/MySQLPython.jpg';
-import cert3 from '../../certificados/OracleSQL.jpg';
-import cert4 from '../../certificados/photoshop.jpg';
-import cert5 from '../../certificados/python.jpg';
-import cert6 from '../../certificados/ReactNative.jpg';
-import cert7 from '../../certificados/certificado_etec.jpeg';
-import cert8 from '../../certificados/ensinoSuperior.png';
-// import cert8 from '../../certificados/ensinoSuperior.png'
+import cert1 from '../../certificados/Linux.webp';
+import cert2 from '../../certificados/MySQLPython.webp';
+import cert3 from '../../certificados/OracleSQL.webp';
+import cert4 from '../../certificados/photoshop.webp';
+import cert5 from '../../certificados/python.webp';
+import cert6 from '../../certificados/ReactNative.webp';
+import cert7 from '../../certificados/certificado_etec.webp';
+import cert8 from '../../certificados/ensinoSuperior.webp';
+// import cert8 from '../../certificados/ensinoSuperior.webp'
 
 function Carrossel() {
     const [isPaused, setIsPaused] = useState(false);
@@ -45,7 +45,11 @@ function Carrossel() {
                             onClick={() => setIsPaused(!isPaused)}
                         >
                             <div className="cert-card">
-                                <img src={cert} className="img-fluid" alt={`${t('certificados.alt')} ${index + 1}`} />
+                                <img
+                                    src={cert}
+                                    className="img-fluid"
+                                    loading="lazy"
+                                    decoding="async" alt={`${t('certificados.alt')} ${index + 1}`} />
                             </div>
                         </div>
                     ))}

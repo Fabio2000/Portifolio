@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { FaCode, FaCalendarAlt, FaBolt, FaWallet, FaHandPointer } from "react-icons/fa"; // Importei o calendário para o SaaS
 import './project.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import tiringaStore from '../../imgs/tiringaStore.png';
-import vitalizeLogo from '../../imgs/vitalizeLogo.png';
+import tiringaStore from '../../imgs/tiringaStore.webp';
+import vitalizeLogo from '../../imgs/vitalizeLogo.webp';
 import { useLanguage } from '../../i18n/LanguageContext';
 
 /**
@@ -117,7 +117,7 @@ export default function Project() {
 
                 {/* PROJETO 2: TIRINGA STORE */}
                 <ProjectCard
-                    front={<img src={tiringaStore} className="img-fluid" alt="E-commerce TiringaStore" />}
+                    front={<img src={tiringaStore} className="img-fluid" alt="E-commerce TiringaStore" loading="lazy" decoding="async" />}
                     title="TiringaStore"
                     subtitle={t('projetos.tiringa.subtitle')}
                     body={t('projetos.tiringa.body')}
@@ -160,7 +160,7 @@ export default function Project() {
                     frontClassName="no-image-front vitalize-front"
                     front={
                         <div className="vitalize-logo-container">
-                            <img src={vitalizeLogo} className="vitalize-logo" alt="Logo Vitalize Consulta" />
+                            <img src={vitalizeLogo} className="vitalize-logo" alt="Logo Vitalize Consulta" loading="lazy" decoding="async" />
                             <div className="vitalize-gold-line"></div>
                             <div className="vitalize-subtitle">
                                 <p>ODONTOLOGIA</p>
